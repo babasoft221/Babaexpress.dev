@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BABA Express - E-commerce & Livraison Rapide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-truck"></i>
+                    <span>BABA Express</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#products">Produits</a></li>
+                    <li><a href="#delivery">Livraison</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Rechercher...">
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Livraison Express<br><span class="highlight">24h/24</span></h1>
+            <p>Commandez en ligne et recevez vos produits en un temps record</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToProducts()">Commander maintenant</button>
+                <button class="btn-secondary">En savoir plus</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>5000+</h3>
+                <p>Commandes livrées</p>
+            </div>
+            <div class="stat">
+                <h3>24h</h3>
+                <p>Livraison express</p>
+            </div>
+            <div class="stat">
+                <h3>98%</h3>
+                <p>Satisfaction client</p>
+            </div>
+        </div>
+    </section> <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Produits Nouveautès</h2>
+            <div class="category-filters" id="categoryFilters"></div>
+            <div class="products-grid" id="productsGrid"> <!-- Produits générés par JS --> </div>
+        </div>
+
+ 
+    </section>
+
+    <!-- Delivery Section -->
+    <section id="delivery" class="delivery">
+        <div class="container">
+            <h2 class="section-title">Service de Livraison Pro</h2>
+            <div class="delivery-content">
+                <div class="delivery-info">
+                    <div class="delivery-feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Livraison 24h</h3>
+                        <p>Recevez votre commande sous 24h partout à Dakar</p>
+                    </div>
+                    <div class="delivery-feature">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Suivi en temps réel</h3>
+                        <p>Suivez votre colis à chaque étape de son parcours</p>
+                    </div>
+                    <div class="delivery-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Garantie satisfaction</h3>
+                        <p>100% remboursé si non satisfait</p>
+                    </div>
+                </div>
+                <div class="delivery-map">
+                    <div id="liveMap" class="live-map"></div>
+                    <button class="btn-locate" id="locateBtn">
+                        <i class="fas fa-location-crosshairs"></i> Voir ma position en temps réel
+                    </button>
+                    <p class="map-status" id="mapStatus">Couverture Dakar entière</p>
+                </div>
+            </div>
+
+            <!-- Package tracking -->
+            <div class="tracking-box">
+                <h3><i class="fas fa-box"></i> Suivre mon colis</h3>
+                <div class="tracking-form">
+                    <input type="text" id="trackingInput" placeholder="Entrez votre numéro de suivi (ex: EM-10234)">
+                    <button class="btn-primary" id="trackBtn">Suivre</button>
+                </div>
+                <div class="tracking-result" id="trackingResult" style="display:none;">
+                    <ul class="tracking-timeline" id="trackingTimeline"></ul>
+                    <div id="trackingMap" class="tracking-map"></div>
+                    <p class="eta-text" id="etaText"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de BABA Express</h2>
+            <p style="max-width: 700px; margin: 0 auto; text-align: center; color: #6b7280;">
+                BABA Express est un service dakarois de e-commerce et de livraison express, disponible 24h/24.
+                Nous livrons vos commandes partout à Dakar avec paiement facile via Wave et Orange Money.
+            </p>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mon Panier</h3>
+                <span class="close" id="closeCart">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p>Votre panier est vide</p>
+            </div>
+            <div class="cart-total">
+                <h4>Total: <span id="cartTotal">0F</span></h4>
+            </div>
+            <div class="delivery-form">
+                <h4>Informations de livraison</h4>
+                <input type="text" id="customerName" placeholder="Nom complet">
+                <input type="tel" id="customerPhone" placeholder="Numéro de téléphone">
+                <textarea id="deliveryAddress" placeholder="Adresse de livraison (quartier, rue, ville...)" rows="2"></textarea>
+            </div>
+            <button class="btn-primary checkout-btn" id="checkoutBtn">
+                <i class="fab fa-whatsapp"></i> Valider la commande par WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Order Ticket Modal -->
+    <div class="modal" id="ticketModal">
+        <div class="modal-content ticket-content">
+            <div class="modal-header">
+                <h3>Ticket de commande</h3>
+                <span class="close" id="closeTicket">&times;</span>
+            </div>
+            <div id="ticketBody"></div>
+            <button class="btn-primary" id="printTicketBtn"><i class="fas fa-print"></i> Imprimer / Enregistrer</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-truck"></i>
+                        <span>BABA Express</span>
+                    </div>
+                    <p>Livraison rapide et fiable 24h/24</p>
+                    <p>Paiement Wave et Orange money</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Livraison Express</a></li>
+                        <li><a href="#">Suivi Colis</a></li>
+                        <li><a href="#">Points Relais</a></li>
+                        <li><a href="#">GP tous pays</a></li>
+                        <li><a href="#">Taxi Privèe</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +221 78 275 95 95</li>
+                        <li><i class="fas fa-envelope"></i> contact@baba-express.sn</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
