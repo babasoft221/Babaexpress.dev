@@ -1,42 +1,42 @@
 'use strict';
 
 const products = [
-  {id:1,name:'iPhone 15 Pro',price:750000,image:'iphone15pro.jpeg',category:'Smartphone',rating:4.8,new:true},
-  {id:2,name:'MacBook Air M2',price:950000,image:'https://media.power-cdn.net/images/h-45e5d5b35ed60f9eab952fa55ceda4db/products/3746370/3746370_3_1200x1200_w_g.jpg',category:'Ordinateur',rating:4.9,new:true},
-  {id:3,name:'AirPods Pro 2',price:175000,image:'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/APAIRPRO2C_B_airpods_pro_2nd_generation_with_magsafe_case_usb_c_.jpg',category:'Audio',rating:4.7},
-  {id:4,name:'iPad Pro',price:625000,image:'https://bizweb.dktcdn.net/100/459/953/products/ipad-pro-m2-silver-ede8804e-d454-4b10-b063-a5ca7a247b3d.jpg?v=1723807563663',category:'Tablette',rating:4.6},
-  {id:5,name:'Apple Watch Ultra',price:560000,image:'https://static1.nordic.pictures/37745099-thickbox_default/apple-watch-ultra-gps-cellular-49mm-alpine-loop-s-orange-mnhh3el-a.jpg',category:'Montre',rating:4.8,new:true},
-  {id:6,name:'Chargeur 65W',price:37000,image:'https://pecsipc.hu/files/uploads/2025/02/ugreen-nexode-s-65w-3-port-gan-fast-charger-eu-grey_1.jpg',category:'Accessoire',rating:4.5},
-  {id:7,name:'Samsung Galaxy S24',price:620000,image:'https://media.gadgetbytenepal.com/2024/01/Samsung-Galaxy-S24-Marble-Grey.jpg',category:'Smartphone',rating:4.6,new:true},
-  {id:8,name:'Samsung Galaxy A55',price:245000,image:'https://www.fonel.com/web/image/product.template/2501/image_1024?unique=668405e',category:'Smartphone',rating:4.4},
-  {id:9,name:'Dell XPS 13',price:880000,image:'https://cdn.lesnumeriques.com/optim/product/75/75507/d49fd532-xps-13-2024-core-ultra-2_png__1200_900__overflow.jpg',category:'Ordinateur',rating:4.7},
-  {id:10,name:'HP Pavilion 15',price:410000,image:'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510528_sd.jpg',category:'Ordinateur',rating:4.3},
-  {id:11,name:'Enceinte JBL Flip 6',price:65000,image:'jblflip6.jpeg',category:'Audio',rating:4.6,new:true},
-  {id:12,name:'Casque Sony WH-1000XM5',price:220000,image:'casquesony.jpeg',category:'Audio',rating:4.9,new:true},
-  {id:13,name:'Samsung Galaxy Tab S9',price:480000,image:'https://www.arlt.com/out/pictures/master/product/1/Samsung_SM-X710NZAAEUE_INT_1.jpg',category:'Tablette',rating:4.5},
-  {id:14,name:'Montre connectée Amazfit',price:65000,image:'https://storeimages.kickmobiles.com/ebayimages/amazfit/gts_4/wifi_bt/black/1.jpg',category:'Montre',rating:4.2},
-  {id:15,name:'Batterie externe 20000mAh',price:22000,image:'powerbank.jpeg',category:'Accessoire',rating:4.4},
-  {id:16,name:'Support téléphone voiture',price:8000,image:'https://item-shopping.c.yimg.jp/i/n/amuza-butiko_20240819-17523_6_d_20240819104757',category:'Accessoire',rating:4.1},
-  {id:17,name:'Sac à dos PC 15"',price:28000,image:'https://coralrsprod.blob.core.windows.net/storage/media/images/products/2026/03/0-56691700-1771500018_6d3eef60.jpg',category:'Accessoire',rating:4.5},
-  {id:18,name:'Souris sans fil Logitech',price:18000,image:'https://techlifebd.com/public/uploads/products/meta/WOnZksWeh1duLIzeNpojJbJMhrJTzpCWTPY1vQ9X.jpeg',category:'Accessoire',rating:4.6},
-{id:19,name:'Téléviseur Samsung 55" Smart TV',price:425000,image:'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=85',category:'Téléviseur',rating:4.8,new:true},
-  {id:20,name:'Téléviseur LG 50" 4K',price:365000,image:'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=85',category:'Téléviseur',rating:4.6},
-  {id:21,name:'Panier fruits & légumes bio',price:15000,image:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85',category:'Produits bio',rating:4.8,new:true},
-  {id:22,name:'Huile d’olive bio premium',price:12000,image:'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85',category:'Produits bio',rating:4.7},
-  {id:23,name:'Coffret soins visage',price:18500,image:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85',category:'Cosmétiques',rating:4.7,new:true},
-  {id:24,name:'Parfum femme premium',price:28000,image:'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85',category:'Cosmétiques',rating:4.8},
-  {id:25,name:'T-shirt premium unisexe',price:12000,image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85',category:'Vêtements',rating:4.6},
-  {id:26,name:'Ensemble streetwear',price:32000,image:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85',category:'Vêtements',rating:4.7},
-  {id:27,name:'Sneakers Nike style sport',price:45000,image:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85',category:'Chaussures',rating:4.8,new:true},
-  {id:28,name:'Sneakers urbaines',price:38000,image:'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85',category:'Chaussures',rating:4.5},
-  {id:29,name:'Menu restaurant — Grillades',price:8500,image:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85',category:'Restaurant',rating:4.8,new:true},
-  {id:30,name:'Burger gourmet & frites',price:6500,image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85',category:'Restaurant',rating:4.7},
-  {id:31,name:'Pizza',price:5000,image:'images/pizza.jpeg',category:'Restaurant',rating:4.8,new:true},
-  {id:32,name:'Brochette',price:1500,image:'images/brochette.jpeg',category:'Restaurant',rating:4.7},
-  {id:33,name:'Tacos',price:2600,image:'images/tacos.jpeg',category:'Restaurant',rating:4.7},
-  {id:34,name:'Fataya',price:1000,image:'images/fataya.jpeg',category:'Restaurant',rating:4.6},
-  {id:35,name:'Chawarma',price:1500,image:'images/chawarma.jpeg',category:'Restaurant',rating:4.8},
-  {id:36,name:'Poulet pané',price:3500,image:'images/poulet-pane.jpeg',category:'Restaurant',rating:4.8}
+  {id:1,name:'iPhone 15 Pro',price:750000,image:'images/catalog/iphone15pro.jpeg',category:'Smartphone',rating:4.8,new:true},
+  {id:2,name:'MacBook Air M2',price:950000,image:'images/catalog/fallback-tech.svg',category:'Ordinateur',rating:4.9,new:true},
+  {id:3,name:'AirPods Pro 2',price:175000,image:'images/catalog/jblflip6-alt.jpeg',category:'Audio',rating:4.7},
+  {id:4,name:'iPad Pro',price:625000,image:'images/catalog/fallback-tech.svg',category:'Tablette',rating:4.6},
+  {id:5,name:'Apple Watch Ultra',price:560000,image:'images/catalog/fallback-tech.svg',category:'Montre',rating:4.8,new:true},
+  {id:6,name:'Chargeur 65W',price:37000,image:'images/catalog/powerbank.jpeg',category:'Accessoire',rating:4.5},
+  {id:7,name:'Samsung Galaxy S24',price:620000,image:'images/catalog/iphone15pro.jpeg',category:'Smartphone',rating:4.6,new:true},
+  {id:8,name:'Samsung Galaxy A55',price:245000,image:'images/catalog/iphone15pro.jpeg',category:'Smartphone',rating:4.4},
+  {id:9,name:'Dell XPS 13',price:880000,image:'images/catalog/fallback-tech.svg',category:'Ordinateur',rating:4.7},
+  {id:10,name:'HP Pavilion 15',price:410000,image:'images/catalog/fallback-tech.svg',category:'Ordinateur',rating:4.3},
+  {id:11,name:'Enceinte JBL Flip 6',price:65000,image:'images/catalog/jblflip6.jpeg',category:'Audio',rating:4.6,new:true},
+  {id:12,name:'Casque Sony WH-1000XM5',price:220000,image:'images/catalog/casquesony.jpeg',category:'Audio',rating:4.9,new:true},
+  {id:13,name:'Samsung Galaxy Tab S9',price:480000,image:'images/catalog/fallback-tech.svg',category:'Tablette',rating:4.5},
+  {id:14,name:'Montre connectée Amazfit',price:65000,image:'images/catalog/fallback-tech.svg',category:'Montre',rating:4.2},
+  {id:15,name:'Batterie externe 20000mAh',price:22000,image:'images/catalog/powerbank.jpeg',category:'Accessoire',rating:4.4},
+  {id:16,name:'Support téléphone voiture',price:8000,image:'images/catalog/powerbank.jpeg',category:'Accessoire',rating:4.1},
+  {id:17,name:'Sac à dos PC 15"',price:28000,image:'images/catalog/powerbank.jpeg',category:'Accessoire',rating:4.5},
+  {id:18,name:'Souris sans fil Logitech',price:18000,image:'images/catalog/powerbank.jpeg',category:'Accessoire',rating:4.6},
+{id:19,name:'Téléviseur Samsung 55" Smart TV',price:425000,image:'images/catalog/fallback-tech.svg',category:'Téléviseur',rating:4.8,new:true},
+  {id:20,name:'Téléviseur LG 50" 4K',price:365000,image:'images/catalog/fallback-tech.svg',category:'Téléviseur',rating:4.6},
+  {id:21,name:'Panier fruits & légumes bio',price:15000,image:'images/catalog/fallback-bio.svg',category:'Produits bio',rating:4.8,new:true},
+  {id:22,name:'Huile d’olive bio premium',price:12000,image:'images/catalog/fallback-bio.svg',category:'Produits bio',rating:4.7},
+  {id:23,name:'Coffret soins visage',price:18500,image:'images/catalog/fallback-beauty.svg',category:'Cosmétiques',rating:4.7,new:true},
+  {id:24,name:'Parfum femme premium',price:28000,image:'images/catalog/fallback-beauty.svg',category:'Cosmétiques',rating:4.8},
+  {id:25,name:'T-shirt premium unisexe',price:12000,image:'images/catalog/fallback-fashion.svg',category:'Vêtements',rating:4.6},
+  {id:26,name:'Ensemble streetwear',price:32000,image:'images/catalog/fallback-fashion.svg',category:'Vêtements',rating:4.7},
+  {id:27,name:'Sneakers Nike style sport',price:45000,image:'images/catalog/fallback-shoes.svg',category:'Chaussures',rating:4.8,new:true},
+  {id:28,name:'Sneakers urbaines',price:38000,image:'images/catalog/fallback-shoes.svg',category:'Chaussures',rating:4.5},
+  {id:29,name:'Menu restaurant — Grillades',price:8500,image:'images/catalog/pizza.jpeg',category:'Restaurant',rating:4.8,new:true},
+  {id:30,name:'Burger gourmet & frites',price:6500,image:'images/catalog/pizza.jpeg',category:'Restaurant',rating:4.7},
+  {id:31,name:'Pizza',price:5000,image:'images/catalog/pizza.jpeg',category:'Restaurant',rating:4.8,new:true},
+  {id:32,name:'Brochette',price:1500,image:'images/catalog/brochette.jpeg',category:'Restaurant',rating:4.7},
+  {id:33,name:'Tacos',price:2600,image:'images/catalog/tacos.jpeg',category:'Restaurant',rating:4.7},
+  {id:34,name:'Fataya',price:1000,image:'images/catalog/fataya.jpeg',category:'Restaurant',rating:4.6},
+  {id:35,name:'Chawarma',price:1500,image:'images/catalog/chawarma.jpeg',category:'Restaurant',rating:4.8},
+  {id:36,name:'Poulet pané',price:3500,image:'images/catalog/poulet-pane.jpeg',category:'Restaurant',rating:4.8}
 ];
 
 const BUSINESS_WHATSAPP='221782759595';
@@ -85,15 +85,20 @@ function productDescription(p){const descriptions={
 'Accessoire':'Accessoire pratique conçu pour compléter et faciliter l’utilisation de vos équipements.'
 };return descriptions[p.category]||`Découvrez ${p.name}, disponible chez BABA Express avec livraison à Dakar.`}
 function productSpecs(p){return `<div class="detail-specs"><div><span>Catégorie</span><strong>${escapeHtml(p.category)}</strong></div><div><span>Évaluation</span><strong>★ ${p.rating}/5</strong></div><div><span>Disponibilité</span><strong class="available"><i class="fas fa-circle"></i> Disponible</strong></div><div><span>Livraison</span><strong>À Dakar</strong></div></div>`}
-function openProductDetails(id){const p=products.find(x=>x.id===id);if(!p)return;$('productDetailsBody').innerHTML=`<div class="product-detail-layout"><div class="product-detail-image"><img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="this.src='powerbank.jpeg'"></div><div class="product-detail-info"><span class="detail-category">${escapeHtml(p.category)}</span><h2>${escapeHtml(p.name)}</h2><div class="product-rating detail-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}<span>(${p.rating}/5)</span></div><div class="detail-price">${money(p.price)}</div><h4>Description</h4><p class="detail-description">${productDescription(p)}</p>${productSpecs(p)}<button class="btn-primary detail-add" data-detail-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter au panier</button></div></div>`;$('productDetailsModal').classList.add('open');const btn=$('[data-detail-add]');if(btn)btn.addEventListener('click',e=>addToCart(Number(btn.dataset.detailAdd),e));}
+function openProductDetails(id){const p=products.find(x=>x.id===id);if(!p)return;$('productDetailsBody').innerHTML=`<div class="product-detail-layout"><div class="product-detail-image"><img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="imageError(this)"></div><div class="product-detail-info"><span class="detail-category">${escapeHtml(p.category)}</span><h2>${escapeHtml(p.name)}</h2><div class="product-rating detail-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}<span>(${p.rating}/5)</span></div><div class="detail-price">${money(p.price)}</div><h4>Description</h4><p class="detail-description">${productDescription(p)}</p>${productSpecs(p)}<button class="btn-primary detail-add" data-detail-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter au panier</button></div></div>`;$('productDetailsModal').classList.add('open');const btn=document.querySelector('[data-detail-add]');if(btn)btn.addEventListener('click',e=>addToCart(Number(btn.dataset.detailAdd),e));}
 function closeProductDetails(){$('productDetailsModal').classList.remove('open')}
-function renderProducts(){const grid=$('productsGrid');const filtered=products.filter(p=>(activeCategory==='Tous'||p.category===activeCategory)&&(!searchTerm||`${p.name} ${p.category}`.toLowerCase().includes(searchTerm)));$('productCounter').textContent=`${filtered.length} produit${filtered.length>1?'s':''}`;grid.innerHTML=filtered.map((p,i)=>`<article class="product-card" data-id="${p.id}" style="animation-delay:${i*35}ms"><div class="product-image ${p.new?'new':''}"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='powerbank.jpeg'"></div><div class="product-info"><h3>${p.name}</h3><div class="product-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}<span style="color:var(--muted);margin-left:.4rem">(${p.rating})</span></div><p class="product-description">${productDescription(p)}</p><div class="product-price">${money(p.price)}</div><div class="product-actions"><button class="product-details-btn" data-details="${p.id}"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter</button></div></div></article>`).join('');$('emptyProducts').hidden=filtered.length>0;grid.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',e=>addToCart(Number(btn.dataset.add),e)));grid.querySelectorAll('[data-details]').forEach(btn=>btn.addEventListener('click',()=>openProductDetails(Number(btn.dataset.details))));}
+function imageError(img){
+  if(img.dataset.fallbackApplied==='1') return;
+  img.dataset.fallbackApplied='1';
+  img.src='images/catalog/fallback-tech.svg';
+}
+function renderProducts(){const grid=$('productsGrid');const filtered=products.filter(p=>(activeCategory==='Tous'||p.category===activeCategory)&&(!searchTerm||`${p.name} ${p.category}`.toLowerCase().includes(searchTerm)));$('productCounter').textContent=`${filtered.length} produit${filtered.length>1?'s':''}`;grid.innerHTML=filtered.map((p,i)=>`<article class="product-card" data-id="${p.id}" style="animation-delay:${i*35}ms"><div class="product-image ${p.new?'new':''}"><img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async" onerror="imageError(this)"></div><div class="product-info"><h3>${escapeHtml(p.name)}</h3><div class="product-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}<span style="color:var(--muted);margin-left:.4rem">(${p.rating})</span></div><p class="product-description">${productDescription(p)}</p><div class="product-price">${money(p.price)}</div><div class="product-actions"><button class="product-details-btn" data-details="${p.id}"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter</button></div></div></article>`).join('');$('emptyProducts').hidden=filtered.length>0;grid.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',e=>addToCart(Number(btn.dataset.add),e)));grid.querySelectorAll('[data-details]').forEach(btn=>btn.addEventListener('click',()=>openProductDetails(Number(btn.dataset.details))));}
 function addToCart(id,e){const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);existing?existing.quantity++:cart.push({...p,quantity:1});persistCart();updateCartCount();updateCartModal();const b=e.currentTarget;b.innerHTML='<i class="fas fa-check"></i> Ajouté !';setTimeout(()=>{b.innerHTML='<i class="fas fa-cart-plus"></i> Ajouter au panier'},900)}
 function persistCart(){localStorage.setItem('babaCart',JSON.stringify(cart))}
 function updateCartCount(){$('cartCount').textContent=cart.reduce((s,i)=>s+i.quantity,0)}
 function openCart(){updateCartModal();$('cartModal').classList.add('open')}
 function closeCart(){$('cartModal').classList.remove('open')}
-function updateCartModal(){const box=$('cartItems');if(!cart.length){box.innerHTML='<p style="text-align:center;color:var(--muted);padding:2rem">Votre panier est vide.</p>';$('cartTotal').textContent='0 F';return}box.innerHTML=cart.map(i=>`<div class="cart-item"><img src="${i.image}" alt="${i.name}"><div class="cart-item-info"><h4>${i.name}</h4><p>${money(i.price)}</p><div class="quantity-controls"><button class="quantity-btn" data-q="${i.id}" data-change="-1">−</button><strong>${i.quantity}</strong><button class="quantity-btn" data-q="${i.id}" data-change="1">+</button></div></div><button class="remove-item" data-remove="${i.id}"><i class="fas fa-trash"></i></button></div>`).join('');box.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>updateQuantity(Number(b.dataset.q),Number(b.dataset.change))));box.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>removeFromCart(Number(b.dataset.remove))));$('cartTotal').textContent=money(cart.reduce((s,i)=>s+i.price*i.quantity,0))}
+function updateCartModal(){const box=$('cartItems');if(!cart.length){box.innerHTML='<p style="text-align:center;color:var(--muted);padding:2rem">Votre panier est vide.</p>';$('cartTotal').textContent='0 F';return}box.innerHTML=cart.map(i=>`<div class="cart-item"><img src="${i.image}" alt="${escapeHtml(i.name)}" loading="lazy" decoding="async" onerror="imageError(this)"><div class="cart-item-info"><h4>${i.name}</h4><p>${money(i.price)}</p><div class="quantity-controls"><button class="quantity-btn" data-q="${i.id}" data-change="-1">−</button><strong>${i.quantity}</strong><button class="quantity-btn" data-q="${i.id}" data-change="1">+</button></div></div><button class="remove-item" data-remove="${i.id}"><i class="fas fa-trash"></i></button></div>`).join('');box.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>updateQuantity(Number(b.dataset.q),Number(b.dataset.change))));box.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>removeFromCart(Number(b.dataset.remove))));$('cartTotal').textContent=money(cart.reduce((s,i)=>s+i.price*i.quantity,0))}
 function updateQuantity(id,change){const i=cart.find(x=>x.id===id);if(!i)return;i.quantity+=change;if(i.quantity<=0)cart=cart.filter(x=>x.id!==id);persistCart();updateCartCount();updateCartModal()}
 function removeFromCart(id){cart=cart.filter(x=>x.id!==id);persistCart();updateCartCount();updateCartModal()}
 
@@ -166,3 +171,37 @@ function initLiveMap(){const el=$('liveMap');if(!el||typeof L==='undefined')retu
 function locateUser(){if(!navigator.geolocation)return alert('La géolocalisation n’est pas disponible.');const btn=$('locateBtn');btn.disabled=true;$('mapStatus').textContent='Localisation en cours...';if(watchId)navigator.geolocation.clearWatch(watchId);watchId=navigator.geolocation.watchPosition(pos=>{const{latitude,longitude,accuracy}=pos.coords,latlng=[latitude,longitude];if(!userMarker){userMarker=L.circleMarker(latlng,{radius:8,color:'#3b82f6',fillColor:'#3b82f6',fillOpacity:.9}).addTo(liveMap).bindPopup('Vous êtes ici');userAccuracyCircle=L.circle(latlng,{radius:accuracy,color:'#3b82f6',fillColor:'#3b82f6',fillOpacity:.1}).addTo(liveMap);liveMap.setView(latlng,15)}else{userMarker.setLatLng(latlng);userAccuracyCircle.setLatLng(latlng);userAccuracyCircle.setRadius(accuracy)}$('mapStatus').textContent=`Position mise à jour • précision ${Math.round(accuracy)} m`;btn.disabled=false},err=>{btn.disabled=false;$('mapStatus').textContent=err.code===1?'Localisation refusée par le navigateur.':'Impossible de récupérer votre position.'},{enableHighAccuracy:true,maximumAge:5000,timeout:10000})}
 function trackPackage(){const code=$('trackingInput').value.trim();if(!code)return alert('Entrez un numéro de suivi.');$('trackingResult').hidden=false;trackingStepIndex=1;renderTimeline();$('etaText').textContent='Livraison estimée sous 24h 🚚';if(!trackingMap){trackingMap=L.map('trackingMap').setView(TRACKING_ROUTE[0],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors'}).addTo(trackingMap);trackingRouteLine=L.polyline(TRACKING_ROUTE,{color:'#3b82f6',weight:4,opacity:.6}).addTo(trackingMap);trackingMarker=L.marker(TRACKING_ROUTE[0]).addTo(trackingMap)}trackingMarker.setLatLng(TRACKING_ROUTE[0]).bindPopup(`Colis ${code}`);trackingMap.fitBounds(trackingRouteLine.getBounds(),{padding:[20,20]});if(trackingInterval)clearInterval(trackingInterval);let idx=0;trackingInterval=setInterval(()=>{idx++;if(idx>=TRACKING_ROUTE.length){clearInterval(trackingInterval);trackingStepIndex=3;renderTimeline();$('etaText').textContent='Colis livré ✅';return}trackingMarker.setLatLng(TRACKING_ROUTE[idx]);if(idx===2){trackingStepIndex=2;renderTimeline()}},1800)}
 function renderTimeline(){$('trackingTimeline').innerHTML=TRACKING_STEPS.map((s,i)=>`<li class="${i<=trackingStepIndex?'done':''}">${s}</li>`).join('')}
+
+/* PWA / installation de l'application */
+(function initPWA(){
+  let deferredPrompt = null;
+  const installBtn = document.getElementById('installAppBtn');
+  const note = document.getElementById('appInstallNote');
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
+  }
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredPrompt = event;
+    if (installBtn) installBtn.hidden = false;
+  });
+  window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    document.body.classList.add('pwa-installed');
+    if (note) note.textContent = 'BABA Express est maintenant installé sur votre appareil.';
+  });
+  if (installBtn) installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      return;
+    }
+    if (note) note.textContent = 'Sur iPhone : Safari → Partager → « Sur l’écran d’accueil ». Sur Android : Chrome → menu ⋮ → « Installer l’application » si l’option apparaît.';
+  });
+  document.querySelectorAll('[data-store-placeholder]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    const store = link.dataset.storePlaceholder === 'ios' ? 'App Store' : 'Google Play';
+    alert(`${store} : l’application native sera disponible après publication sur la boutique.`);
+  }));
+})();
