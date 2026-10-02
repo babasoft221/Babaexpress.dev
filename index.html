@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1e3a8a">
+  <meta name="description" content="BABA Express — e-commerce, livraison, courses rapides et taxi privé à Dakar.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="images/logo-baba-express.jpeg">
   <title>BABA Express — E-commerce & Livraison</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,11 +21,12 @@
     <nav class="navbar">
       <div class="nav-container">
         <a href="#home" class="logo" aria-label="BABA Express">
-          <img src="logo-baba-express.jpeg" alt="BABA Express">
+          <img src="images/logo-baba-express.jpeg" alt="BABA Express">
         </a>
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home">Accueil</a></li>
           <li><a href="#products">Produits</a></li>
+          <li><a href="#app">App</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#delivery">Livraison</a></li>
           <li><a href="#about">À propos</a></li>
@@ -42,9 +49,9 @@
     <section id="home" class="hero">
       <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
       <div class="home-banners" id="homeBanners" aria-label="Offres à la une">
-        <article class="home-banner active" style="--banner-image:url('iphone15pro.jpeg')"><div><span>TECH & MOBILITÉ</span><h2>Vos produits premium, livrés à Dakar</h2><a href="#products" class="banner-btn">Découvrir</a></div></article>
-        <article class="home-banner" style="--banner-image:url('casquesony.jpeg')"><div><span>AUDIO</span><h2>Son immersif avec Sony & JBL</h2><a href="#products" class="banner-btn">Voir les produits</a></div></article>
-        <article class="home-banner" style="--banner-image:url('pizza.jpeg')"><div><span>RESTAURANT</span><h2>Commandez et faites-vous livrer</h2><a href="#products" class="banner-btn">Commander</a></div></article>
+        <article class="home-banner active" style="--banner-image:url('images/iphone15pro.jpeg')"><div><span>TECH & MOBILITÉ</span><h2>Vos produits premium, livrés à Dakar</h2><a href="#products" class="banner-btn">Découvrir</a></div></article>
+        <article class="home-banner" style="--banner-image:url('images/casquesony.jpeg')"><div><span>AUDIO</span><h2>Son immersif avec Sony & JBL</h2><a href="#products" class="banner-btn">Voir les produits</a></div></article>
+        <article class="home-banner" style="--banner-image:url('images/pizza.jpeg')"><div><span>RESTAURANT</span><h2>Commandez et faites-vous livrer</h2><a href="#products" class="banner-btn">Commander</a></div></article>
         <div class="banner-dots" id="bannerDots"><button class="active" data-slide="0" aria-label="Affiche 1"></button><button data-slide="1" aria-label="Affiche 2"></button><button data-slide="2" aria-label="Affiche 3"></button></div>
       </div>
       <div class="hero-content">
@@ -85,6 +92,47 @@
         </div>
         <div class="products-grid" id="productsGrid"></div>
         <div class="empty-state" id="emptyProducts" hidden><i class="fas fa-box-open"></i><h3>Aucun produit trouvé</h3><p>Essayez un autre mot-clé ou une autre catégorie.</p></div>
+      </div>
+    </section>
+
+    <section id="app" class="app-section section-3d">
+      <div class="container">
+        <div class="app-card glass-3d">
+          <div class="app-visual">
+            <div class="app-phone">
+              <div class="app-phone-notch"></div>
+              <div class="app-phone-screen">
+                <img src="images/logo-baba-express.jpeg" alt="BABA Express" loading="lazy">
+                <strong>BABA Express</strong>
+                <span>Livraison • Courses • Taxi</span>
+                <div class="app-mini-actions"><span>🛒</span><span>🚚</span><span>📍</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="app-copy">
+            <span class="eyebrow"><i class="fas fa-mobile-screen-button"></i> Application BABA Express</span>
+            <h2 class="section-title">Votre BABA Express dans votre téléphone</h2>
+            <p>Installez le site comme une application sur Android, iPhone, tablette ou ordinateur. Le panier, les commandes, le suivi et les préférences restent accessibles depuis votre appareil.</p>
+            <div class="app-features">
+              <span><i class="fas fa-bolt"></i> Rapide</span>
+              <span><i class="fas fa-cart-shopping"></i> Panier</span>
+              <span><i class="fas fa-location-dot"></i> Livraison</span>
+              <span><i class="fas fa-moon"></i> Mode sombre</span>
+            </div>
+            <div class="app-downloads">
+              <button class="store-btn install-app-btn" id="installAppBtn" type="button">
+                <i class="fas fa-download"></i><span><small>Installer</small><strong>L'application</strong></span>
+              </button>
+              <a class="store-btn" href="#" data-store-placeholder="android" aria-label="Application Android bientôt disponible">
+                <i class="fab fa-google-play"></i><span><small>Bientôt sur</small><strong>Google Play</strong></span>
+              </a>
+              <a class="store-btn" href="#" data-store-placeholder="ios" aria-label="Application iPhone bientôt disponible">
+                <i class="fab fa-apple"></i><span><small>Bientôt sur</small><strong>App Store</strong></span>
+              </a>
+            </div>
+            <p class="app-install-note" id="appInstallNote">Sur iPhone : Safari → Partager → « Sur l’écran d’accueil ». Sur Android/Chrome : utilisez « Installer l’application » lorsque le navigateur le propose.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -165,21 +213,21 @@
   <section class="partners-section" aria-label="Partenaires">
     <div class="container"><div class="section-heading centered"><span class="eyebrow">Écosystème</span><h2 class="section-title">Nos partenaires</h2><p>Un bandeau de logos défilant pour présenter vos partenaires et solutions.</p></div>
       <div class="partners-marquee"><div class="partners-track">
-        <div class="partner-logo wave-logo"><img src="wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
-        <div class="partner-logo orange-logo"><img src="orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
+        <div class="partner-logo wave-logo"><img src="images/wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
+        <div class="partner-logo orange-logo"><img src="images/orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-truck-fast"></i><strong>Express Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-store"></i><strong>Commerce Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-building"></i><strong>Immo Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-shield-halved"></i><strong>Assurance Partner</strong></div>
-        <div class="partner-logo wave-logo"><img src="wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
-        <div class="partner-logo orange-logo"><img src="orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
+        <div class="partner-logo wave-logo"><img src="images/wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
+        <div class="partner-logo orange-logo"><img src="images/orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-truck-fast"></i><strong>Express Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-store"></i><strong>Commerce Partner</strong></div>
       </div></div>
     </div>
   </section>
 
-  <footer class="footer" id="contact"><div class="container"><div class="footer-content"><div class="footer-section"><a href="#home" class="logo footer-logo"><img src="logo-baba-express.jpeg" alt="BABA Express"></a><p>Livraison rapide et fiable 24h/24</p><p>Paiement Wave et Orange Money</p></div><div class="footer-section"><h4>Services</h4><ul><li><a href="#delivery">Livraison Express</a></li><li><a href="#delivery">Suivi Colis</a></li><li><a href="#services">Course rapide</a></li><li><a href="#services">Taxi privé</a></li></ul></div><div class="footer-section"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +221 78 275 95 95</li><li><i class="fas fa-envelope"></i> contact@baba-express.sn</li><li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p></div></div></footer>
+  <footer class="footer" id="contact"><div class="container"><div class="footer-content"><div class="footer-section"><a href="#home" class="logo footer-logo"><img src="images/logo-baba-express.jpeg" alt="BABA Express"></a><p>Livraison rapide et fiable 24h/24</p><p>Paiement Wave et Orange Money</p></div><div class="footer-section"><h4>Services</h4><ul><li><a href="#delivery">Livraison Express</a></li><li><a href="#delivery">Suivi Colis</a></li><li><a href="#services">Course rapide</a></li><li><a href="#services">Taxi privé</a></li></ul></div><div class="footer-section"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +221 78 275 95 95</li><li><i class="fas fa-envelope"></i> contact@baba-express.sn</li><li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p></div></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
