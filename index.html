@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1e3a8a">
-  <meta name="description" content="BABA Express : e-commerce, livraison express, course rapide et taxi privé à Dakar. Paiement Wave, Orange Money ou à la livraison.">
-  <meta property="og:type" content="website"><meta property="og:title" content="BABA Express — E-commerce & Livraison à Dakar"><meta property="og:description" content="Commandez, faites-vous livrer et réservez vos courses à Dakar 24h/24."><meta property="og:image" content="images/logo-baba-express.jpeg"><meta property="og:locale" content="fr_SN">
+  <meta name="description" content="BABA EXPRESS SENEGAL : livraison et services, e-commerce, course rapide et taxi privé à Dakar. Paiement Wave, Orange Money ou à la livraison.">
+  <meta property="og:type" content="website"><meta property="og:title" content="BABA EXPRESS SENEGAL — livraison et services à Dakar"><meta property="og:description" content="Commandez, faites-vous livrer et réservez vos courses à Dakar 24h/24."><meta property="og:image" content="images/logo-baba-express.jpeg"><meta property="og:locale" content="fr_SN">
   <link rel="icon" type="image/jpeg" href="images/logo-baba-express.jpeg"><link rel="apple-touch-icon" href="images/logo-baba-express.jpeg">
-  <title>BABA Express — E-commerce & Livraison</title>
+  <title>BABA EXPRESS SENEGAL — livraison et services</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -17,9 +17,7 @@
   <header class="header">
     <nav class="navbar">
       <div class="nav-container">
-        <a href="#home" class="logo" aria-label="BABA Express">
-          <img src="images/logo-baba-express.jpeg" alt="BABA Express">
-        </a>
+        <a href="#home" class="logo" aria-label="BABA EXPRESS SENEGAL livraison et services"><span class="brand-logo"><strong>BABA EXPRESS</strong><small>SENEGAL • livraison et services</small></span></a>
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home">Accueil</a></li>
           <li><a href="#products">Produits</a></li>
@@ -30,8 +28,10 @@
         </ul>
         <div class="nav-icons">
           <button class="icon-btn" id="voiceSearchBtn" title="Recherche vocale" aria-label="Recherche vocale"><i class="fas fa-microphone"></i></button>
-          <button class="icon-btn" id="themeToggle" title="Mode sombre" aria-label="Activer le mode sombre"><i class="fas fa-moon"></i></button>
-          <button class="icon-btn account-btn" id="accountBtn" title="Connexion"><i class="fas fa-user"></i></button>
+          <button class="icon-btn" id="themeToggle" title="Rétro éclairage" aria-label="Rétro éclairage"><i class="fas fa-moon"></i></button>
+          <button class="subscribe-btn" id="subscribeBtn" type="button" title="S'abonner">
+            <i class="fas fa-bell"></i><span>S'abonner</span>
+          </button>
           <button class="cart-icon" id="cartIcon" title="Panier" aria-label="Ouvrir le panier">
             <i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount">0</span>
           </button>
@@ -78,14 +78,6 @@
           <button id="clearSearch" title="Effacer"><i class="fas fa-times"></i></button>
         </div>
         <div class="category-filters" id="categoryFilters"></div>
-        <div class="category-shortcuts" aria-label="Catégories principales">
-          <button class="category-shortcut" data-shortcut="Téléviseur"><i class="fas fa-tv"></i><span>Téléviseurs</span></button>
-          <button class="category-shortcut" data-shortcut="Produits bio"><i class="fas fa-leaf"></i><span>Produits bio</span></button>
-          <button class="category-shortcut" data-shortcut="Cosmétiques"><i class="fas fa-spa"></i><span>Cosmétiques</span></button>
-          <button class="category-shortcut" data-shortcut="Vêtements"><i class="fas fa-shirt"></i><span>Vêtements</span></button>
-          <button class="category-shortcut" data-shortcut="Chaussures"><i class="fas fa-shoe-prints"></i><span>Chaussures</span></button>
-          <button class="category-shortcut" data-shortcut="Restaurant"><i class="fas fa-utensils"></i><span>Restaurant</span></button>
-        </div>
         <div class="products-grid" id="productsGrid"></div>
         <div class="empty-state" id="emptyProducts" hidden><i class="fas fa-box-open"></i><h3>Aucun produit trouvé</h3><p>Essayez un autre mot-clé ou une autre catégorie.</p></div>
       </div>
@@ -93,6 +85,30 @@
 
     <section id="services" class="services section-3d">
       <div class="container">
+  <div class="category-marquee" aria-label="Catégories produits">
+    <div class="category-marquee-track">
+      <div class="category-marquee-group">
+        <button class="category-shortcut" data-shortcut="Tous"><i class="fas fa-store"></i><span>Tous</span></button>
+        <button class="category-shortcut" data-shortcut="Téléviseur"><i class="fas fa-tv"></i><span>Téléviseurs</span></button>
+        <button class="category-shortcut" data-shortcut="Produits bio"><i class="fas fa-leaf"></i><span>Produits bio</span></button>
+        <button class="category-shortcut" data-shortcut="Cosmétiques"><i class="fas fa-spa"></i><span>Cosmétiques</span></button>
+        <button class="category-shortcut" data-shortcut="Vêtements"><i class="fas fa-shirt"></i><span>Vêtements</span></button>
+        <button class="category-shortcut" data-shortcut="Chaussures"><i class="fas fa-shoe-prints"></i><span>Chaussures</span></button>
+        <button class="category-shortcut" data-shortcut="Restaurant"><i class="fas fa-utensils"></i><span>Restaurant</span></button>
+      </div>
+      <div class="category-marquee-group" aria-hidden="true">
+        <button class="category-shortcut" data-shortcut="Tous"><i class="fas fa-store"></i><span>Tous</span></button>
+        <button class="category-shortcut" data-shortcut="Téléviseur"><i class="fas fa-tv"></i><span>Téléviseurs</span></button>
+        <button class="category-shortcut" data-shortcut="Produits bio"><i class="fas fa-leaf"></i><span>Produits bio</span></button>
+        <button class="category-shortcut" data-shortcut="Cosmétiques"><i class="fas fa-spa"></i><span>Cosmétiques</span></button>
+        <button class="category-shortcut" data-shortcut="Vêtements"><i class="fas fa-shirt"></i><span>Vêtements</span></button>
+        <button class="category-shortcut" data-shortcut="Chaussures"><i class="fas fa-shoe-prints"></i><span>Chaussures</span></button>
+        <button class="category-shortcut" data-shortcut="Restaurant"><i class="fas fa-utensils"></i><span>Restaurant</span></button>
+      </div>
+    </div>
+  </div>
+
+
         <div class="section-heading centered"><span class="eyebrow">Mobilité</span><h2 class="section-title">Nos services</h2><p>Deux espaces rapides pour vos déplacements et vos courses.</p></div>
         <div class="service-grid">
           <article class="service-card glass-3d">
@@ -170,7 +186,7 @@
     </div>
   </section>
 
-  <footer class="footer" id="contact"><div class="container"><div class="footer-content"><div class="footer-section"><a href="#home" class="logo footer-logo"><img src="images/logo-baba-express.jpeg" alt="BABA Express"></a><p>Livraison rapide et fiable 24h/24</p><p>Paiement Wave et Orange Money</p></div><div class="footer-section"><h4>Services</h4><ul><li><a href="#delivery">Livraison Express</a></li><li><a href="#delivery">Suivi Colis</a></li><li><a href="#services">Course rapide</a></li><li><a href="#services">Taxi privé</a></li></ul></div><div class="footer-section"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +221 78 275 95 95</li><li><i class="fas fa-envelope"></i> contact@baba-express.sn</li><li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p></div></div></footer>
+  <footer class="footer" id="contact"><div class="container"><div class="footer-content"><div class="footer-section"><a href="#home" class="logo footer-logo" aria-label="BABA EXPRESS SENEGAL livraison et services"><span class="brand-logo"><strong>BABA EXPRESS</strong><small>SENEGAL • livraison et services</small></span></a><p>Livraison rapide et fiable 24h/24</p><p>Paiement Wave et Orange Money</p></div><div class="footer-section"><h4>Services</h4><ul><li><a href="#delivery">Livraison Express</a></li><li><a href="#delivery">Suivi Colis</a></li><li><a href="#services">Course rapide</a></li><li><a href="#services">Taxi privé</a></li></ul></div><div class="footer-section"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +221 78 275 95 95</li><li><i class="fas fa-envelope"></i> contact@baba-express.sn</li><li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p></div></div></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <noscript><p style="text-align:center;padding:1rem">Activez JavaScript pour utiliser BABA Express.</p></noscript>
   <script src="script.js"></script>
