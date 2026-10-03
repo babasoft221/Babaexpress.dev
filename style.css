@@ -236,31 +236,9 @@ body.dark-theme .partners-section{background:var(--surface2)}body.dark-theme .pa
 @media(max-width:768px){.home-banners{height:225px;width:calc(100% - 24px);margin-bottom:22px;border-radius:22px}.home-banner{padding:22px;background-image:linear-gradient(90deg,rgba(30,58,138,.96),rgba(30,58,138,.68)),var(--banner-image)}.home-banner h2{font-size:1.55rem}.partner-logo{min-width:165px;height:68px}.partners-section{padding-top:55px}}
 @media(max-width:480px){.home-banners{height:205px}.home-banner{padding:18px}.home-banner h2{font-size:1.35rem}.banner-btn{padding:.62rem .9rem;font-size:.88rem}}
 
-/* Cartes description & détails produits */
-.product-description{color:var(--muted);font-size:.86rem;line-height:1.5;margin:.55rem 0 .8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
-.product-actions{display:grid;grid-template-columns:1fr 1.2fr;gap:.55rem;margin-top:.7rem}
-.product-details-btn,.product-add{min-height:44px;border-radius:12px;font-weight:800;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:.4rem}
-.product-details-btn{border:1px solid var(--border);background:var(--surface);color:var(--primary)}
-.product-details-btn:hover{background:var(--surface2);transform:translateY(-2px)}
-.product-add{border:0}
-.product-details-modal{z-index:1200}
-.product-details-content{max-width:900px;width:calc(100% - 30px);max-height:90vh;overflow:auto}
-.product-details-body{padding:.4rem 0}
-.product-detail-layout{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(320px,1.1fr);gap:2rem;align-items:center}
-.product-detail-image{min-height:360px;border-radius:22px;overflow:hidden;background:var(--surface2);display:grid;place-items:center;border:1px solid var(--border)}
-.product-detail-image img{width:100%;height:360px;object-fit:cover;display:block}
-.product-detail-info h2{font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:.4rem 0 .65rem}
-.detail-category{display:inline-flex;padding:.35rem .7rem;border-radius:999px;background:rgba(249,115,22,.12);color:var(--accent);font-size:.75rem;font-weight:800;text-transform:uppercase}
-.detail-rating{margin-bottom:.5rem}
-.detail-rating span{color:var(--muted);margin-left:.45rem}
-.detail-price{font-size:1.75rem;font-weight:900;color:var(--primary);margin:.5rem 0 1rem}
-.product-detail-info h4{font-size:1rem;margin-top:.8rem}
-.detail-description{color:var(--muted);line-height:1.75}
-.detail-specs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1.1rem 0}
-.detail-specs>div{padding:.75rem;border:1px solid var(--border);border-radius:14px;background:var(--surface2)}
-.detail-specs span{display:block;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.detail-specs strong{display:block;margin-top:.2rem}
-.available{color:#16a34a}
-.available i{font-size:.55rem;vertical-align:middle}
-.detail-add{width:100%;margin-top:.3rem}
-@media(max-width:700px){.product-actions{grid-template-columns:1fr}.product-detail-layout{grid-template-columns:1fr;gap:1rem}.product-detail-image,.product-detail-image img{height:260px;min-height:260px}.detail-specs{grid-template-columns:1fr 1fr}}
+/* --- Correctifs panier / favoris / toast --- */
+.product-card{transform-style:flat!important}.product-image{transform:none!important}
+.product-add{position:relative;z-index:5;touch-action:manipulation}
+.fav-btn{position:absolute;top:12px;left:12px;z-index:3;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#9ca3af;cursor:pointer;font-size:1rem;box-shadow:0 4px 12px rgba(0,0,0,.15)}.fav-btn.active{color:#ef4444}
+.clear-cart{display:block;margin:0 1.4rem .6rem auto;border:0;background:transparent;color:#ef4444;font-weight:700;cursor:pointer;text-decoration:underline}.clear-cart[hidden]{display:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:#111827;color:#fff;padding:12px 18px;border-radius:30px;font-weight:700;z-index:3000;opacity:0;pointer-events:none;transition:.3s;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
