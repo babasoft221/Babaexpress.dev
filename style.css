@@ -368,3 +368,123 @@ button{touch-action:manipulation}
 .app-install-note{font-size:.78rem!important;margin-top:13px;max-width:650px!important}.pwa-installed .install-app-btn{display:none}
 @media(max-width:800px){.app-card{grid-template-columns:1fr;padding:28px 20px;gap:18px}.app-visual{min-height:350px}.app-downloads{display:grid;grid-template-columns:1fr 1fr}.install-app-btn{grid-column:1/-1}.store-btn{justify-content:center}}
 @media(max-width:480px){.app-section{padding:60px 0}.app-card{border-radius:22px}.app-phone{width:180px;height:345px}.app-visual{min-height:330px}.app-downloads{grid-template-columns:1fr}.install-app-btn{grid-column:auto}.store-btn{width:100%}}
+
+/* =========================================================
+   BABA Express — final responsive hardening
+   Objectif : cartes produits et panier impeccables sur
+   smartphone, tablette et ordinateur.
+   ========================================================= */
+
+/* Les cartes gardent une hauteur cohérente sans écraser le contenu. */
+.products-grid{align-items:stretch;grid-auto-rows:1fr}
+.product-card{display:flex;flex-direction:column;height:100%;min-height:0}
+.product-image{flex:0 0 auto;isolation:isolate}
+.product-image img{width:100%;height:100%;object-fit:contain;object-position:center;padding:14px;}
+.product-info{display:flex;flex-direction:column;flex:1;min-width:0}
+.product-description{flex:0 0 auto}
+.product-price{margin-top:auto}
+.product-actions{margin-top:.75rem}
+.product-actions button{min-width:0}
+
+/* Focus clavier/tactile plus propre. */
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:3px solid rgba(59,130,246,.45);
+  outline-offset:2px;
+}
+
+/* Panier : aucune largeur fixe ne doit provoquer de débordement. */
+.cart-modal-content{display:flex;flex-direction:column;max-height:min(92vh,900px)}
+.cart-items{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.cart-item{grid-template-columns:64px minmax(0,1fr) auto}
+.cart-item-info{min-width:0}
+.cart-item-info h4,.cart-item-info p{overflow-wrap:anywhere}
+.quantity-controls{flex-wrap:wrap}
+.remove-item{min-width:38px;min-height:36px}
+.delivery-form{min-width:0}
+.checkout-btn{min-height:48px}
+
+/* Modal produit : contenu toujours contenu dans la fenêtre. */
+.product-details-content{display:flex;flex-direction:column;overflow:hidden}
+.product-details-body{overflow-y:auto;min-height:0}
+.product-detail-info{min-width:0}
+.product-detail-image{width:100%;min-width:0}
+.product-detail-image img{max-width:100%;object-fit:contain}
+
+/* Mode sombre : textes de l'accueil lisibles. */
+body.dark-theme .hero-content p{color:#e5e7eb}
+body.dark-theme .hero-stats .stat p{color:#cbd5e1}
+body.dark-theme .product-details-btn{background:var(--surface2);color:#e5e7eb}
+body.dark-theme .product-description{color:#aeb8c7}
+
+/* Tablette */
+@media (min-width:769px) and (max-width:1100px){
+  .nav-container,.container{padding-inline:18px}
+  .nav-menu{gap:.45rem}
+  .nav-menu a{font-size:.82rem}
+  .products-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .product-image{height:205px}
+  .product-info{padding:14px}
+  .product-description{font-size:.82rem}
+  .product-actions{grid-template-columns:1fr}
+}
+
+/* Smartphone : 2 colonnes à partir de 521px, 1 colonne sur petits écrans. */
+@media (max-width:768px){
+  .nav-icons{flex-shrink:0}
+  .nav-icons .icon-btn,.nav-icons .cart-icon{flex-shrink:0}
+  .products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .product-card{border-radius:18px}
+  .product-image{height:185px}
+  .product-info{padding:12px}
+  .product-info h3{font-size:.98rem;line-height:1.3}
+  .product-rating{font-size:.78rem}
+  .product-description{font-size:.8rem;line-height:1.45}
+  .product-price{font-size:1.08rem}
+  .product-actions{grid-template-columns:1fr;gap:7px}
+  .product-details-btn,.product-add{min-height:44px;width:100%}
+  .cart-modal-content{max-height:94vh}
+  .cart-items{max-height:none;flex:1 1 auto}
+  .delivery-form{padding-inline:14px}
+  .checkout-btn{width:calc(100% - 28px);margin-inline:14px}
+  .product-details-content{width:calc(100% - 16px);max-height:94vh}
+}
+
+@media (max-width:520px){
+  .nav-container{padding-inline:10px}
+  .logo img{width:100px;height:34px}
+  .nav-icons{gap:4px}
+  .nav-icons .icon-btn,.nav-icons .cart-icon{width:36px;height:36px}
+  /* Le micro reste disponible sur smartphone. */
+  .nav-icons .icon-btn:first-child{display:grid}
+  .hamburger{width:38px;height:38px;padding:5px;flex-shrink:0}
+  .products-grid{grid-template-columns:1fr;gap:14px}
+  .product-image{height:220px}
+  .product-info{padding:14px}
+  .product-info h3{font-size:1.04rem}
+  .product-description{-webkit-line-clamp:3;min-height:0}
+  .product-actions{grid-template-columns:1fr 1.15fr}
+  .product-details-content{border-radius:18px}
+  .product-detail-image,.product-detail-image img{height:220px;min-height:220px}
+  .detail-specs{grid-template-columns:1fr}
+  .cart-item{grid-template-columns:52px minmax(0,1fr) 38px;gap:8px}
+  .cart-item img{width:52px;height:52px}
+  .quantity-btn{width:32px;height:32px}
+  .remove-item{width:38px;height:38px;padding:0;display:grid;place-items:center}
+  .cart-total{padding-inline:14px}
+  .modal-header{padding:12px 14px}
+}
+
+@media (max-width:380px){
+  .logo img{width:88px}
+  .nav-icons{gap:2px}
+  .nav-icons .icon-btn,.nav-icons .cart-icon{width:33px;height:33px}
+  .hamburger{width:34px;height:34px}
+  .product-actions{grid-template-columns:1fr}
+  .product-image{height:205px}
+  .cart-item{grid-template-columns:46px minmax(0,1fr) 34px}
+  .cart-item img{width:46px;height:46px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .product-card,.product-card:hover,.product-card:hover .product-image img{transform:none!important}
+}
