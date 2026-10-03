@@ -242,3 +242,72 @@ body.dark-theme .partners-section{background:var(--surface2)}body.dark-theme .pa
 .fav-btn{position:absolute;top:12px;left:12px;z-index:3;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#9ca3af;cursor:pointer;font-size:1rem;box-shadow:0 4px 12px rgba(0,0,0,.15)}.fav-btn.active{color:#ef4444}
 .clear-cart{display:block;margin:0 1.4rem .6rem auto;border:0;background:transparent;color:#ef4444;font-weight:700;cursor:pointer;text-decoration:underline}.clear-cart[hidden]{display:none}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:#111827;color:#fff;padding:12px 18px;border-radius:30px;font-weight:700;z-index:3000;opacity:0;pointer-events:none;transition:.3s;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+
+/* Bandeau catégories sous le navbar */
+.category-marquee{
+  position:fixed;
+  top:68px;
+  left:0;
+  width:100%;
+  z-index:999;
+  overflow:hidden;
+  background:var(--header);
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.14);
+  box-shadow:0 5px 18px rgba(0,0,0,.14);
+}
+.category-marquee-track{
+  display:flex;
+  width:max-content;
+  animation:categoryScroll 28s linear infinite;
+}
+.category-marquee-group{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  flex-shrink:0;
+}
+.category-marquee .category-shortcut{
+  min-height:42px;
+  height:42px;
+  min-width:max-content;
+  padding:7px 16px;
+  flex-direction:row;
+  gap:8px;
+  border-radius:999px;
+  background:var(--surface);
+  color:var(--text);
+  white-space:nowrap;
+  box-shadow:none;
+}
+.category-marquee .category-shortcut i{font-size:1rem}
+.category-marquee:hover .category-marquee-track{animation-play-state:paused}
+@keyframes categoryScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+/* Le contenu commence sous les deux barres fixes */
+.hero{padding-top:210px}
+@media(max-width:1000px){
+  .category-marquee{top:68px}
+  .category-marquee-group{gap:7px;padding:7px}
+  .category-marquee .category-shortcut{height:40px;min-height:40px;padding:6px 13px;font-size:.85rem}
+  .hero{padding-top:205px}
+}
+@media(max-width:600px){
+  .category-marquee{top:64px}
+  .category-marquee-track{animation-duration:24s}
+  .category-marquee .category-shortcut{height:38px;min-height:38px;padding:5px 12px;font-size:.8rem}
+  .hero{padding-top:190px}
+}
+
+.subscribe-btn{border:0;background:var(--primary);color:#fff;padding:.62rem .9rem;border-radius:999px;display:inline-flex;align-items:center;gap:.4rem;font-weight:800;cursor:pointer;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.12);transition:transform .2s ease,opacity .2s ease}.subscribe-btn:hover{transform:translateY(-1px);opacity:.92}.subscribe-btn i{font-size:.85rem}@media(max-width:760px){.subscribe-btn span{display:none}.subscribe-btn{width:38px;height:38px;justify-content:center;padding:0}.nav-icons{gap:.35rem}}
+
+/* Logo texte BABA EXPRESS SENEGAL */
+.brand-logo{display:flex;flex-direction:column;justify-content:center;line-height:1.05;white-space:nowrap;text-decoration:none;}
+.brand-logo strong{font-size:1.05rem;font-weight:900;letter-spacing:.04em;color:#f97316;}
+.brand-logo small{font-size:.56rem;font-weight:700;letter-spacing:.05em;line-height:1.25;margin-top:.18rem;color:#f97316;}
+.footer-logo .brand-logo{margin-bottom:.75rem;}
+@media (max-width:600px){.brand-logo strong{font-size:.82rem}.brand-logo small{font-size:.46rem}.brand-logo{max-width:155px;white-space:normal}}
