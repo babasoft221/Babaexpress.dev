@@ -54,13 +54,24 @@ let authMode='login';
 const $=id=>document.getElementById(id);
 const money=n=>`${Number(n).toLocaleString('fr-FR')} F`;
 
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('#subscribeBtn');
+  if(!btn)return;
+  const email=prompt('Entrez votre adresse e-mail pour vous abonner à BABA Express :');
+  if(email===null)return;
+  const value=email.trim().toLowerCase();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))return alert('Veuillez entrer une adresse e-mail valide.');
+  localStorage.setItem('babaSubscriber',value);
+  alert('Merci ! Votre abonnement BABA Express est enregistré.');
+});
+
 window.addEventListener('DOMContentLoaded',()=>{
-  renderCategoryFilters();renderProducts();updateCartCount();restoreTheme();updateAccountButton();
+  renderCategoryFilters();renderProducts();updateCartCount();restoreTheme();
   $('cartIcon').addEventListener('click',openCart);initHomeBanners();initVoiceSearch();$('closeCart').addEventListener('click',closeCart);
   $('closeTicket').addEventListener('click',closeTicket);$('printTicketBtn').addEventListener('click',printTicket);
   $('checkoutBtn').addEventListener('click',checkout);$('locateBtn').addEventListener('click',locateUser);$('trackBtn').addEventListener('click',trackPackage);
   $('productSearch').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();renderProducts()});$('clearSearch').addEventListener('click',()=>{$('productSearch').value='';searchTerm='';renderProducts();$('productSearch').focus()});
-  $('themeToggle').addEventListener('click',toggleTheme);$('accountBtn').addEventListener('click',openAuth);$('closeAuth').addEventListener('click',closeAuth);$('authForm').addEventListener('submit',handleAuth);
+  $('themeToggle').addEventListener('click',toggleTheme);$('closeAuth').addEventListener('click',closeAuth);$('authForm').addEventListener('submit',handleAuth);
   document.querySelectorAll('.auth-tab').forEach(t=>t.addEventListener('click',()=>setAuthMode(t.dataset.auth)));
   document.querySelectorAll('.service-open').forEach(btn=>btn.addEventListener('click',()=>openService(btn.dataset.service)));
   document.querySelectorAll('.category-shortcut').forEach(btn=>btn.addEventListener('click',()=>{activeCategory=btn.dataset.shortcut;renderCategoryFilters();renderProducts();$('products').scrollIntoView({behavior:'smooth'});}));$('closeService').addEventListener('click',closeService);$('serviceForm').addEventListener('submit',submitService);
@@ -133,8 +144,6 @@ function closeAuth(){$('authModal').classList.remove('open')}
 function setAuthMode(mode){authMode=mode;document.querySelectorAll('.auth-tab').forEach(t=>t.classList.toggle('active',t.dataset.auth===mode));$('authTitle').textContent=mode==='login'?'Connexion':'Créer un compte';$('authSubmit').textContent=mode==='login'?'Se connecter':'S’inscrire';$('authName').hidden=mode==='login';$('authName').required=mode==='register'}
 async function hashPw(email,pw){try{const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(email+'|'+pw));return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('')}catch(_){return 'plain:'+pw}}
 async function handleAuth(e){e.preventDefault();const email=$('authEmail').value.trim().toLowerCase(),hash=await hashPw(email,$('authPassword').value);let users=JSON.parse(localStorage.getItem('babaUsers')||'[]');if(authMode==='register'){const name=$('authName').value.trim();if(!name)return alert('Entrez votre nom.');if(users.some(u=>u.email===email))return alert('Cet email existe déjà.');users.push({name,email,hash});localStorage.setItem('babaUsers',JSON.stringify(users));localStorage.setItem('babaUser',JSON.stringify({name,email}));alert('Compte créé avec succès.');closeAuth();updateAccountButton();return}const u=users.find(x=>x.email===email&&x.hash===hash);if(!u)return alert('Email ou mot de passe incorrect.');localStorage.setItem('babaUser',JSON.stringify({name:u.name,email:u.email}));closeAuth();updateAccountButton();alert(`Bienvenue ${u.name} !`)}
-function updateAccountButton(){const u=JSON.parse(localStorage.getItem('babaUser')||'null');$('accountBtn').title=u?`Connecté : ${u.name}`:'Connexion';$('accountBtn').innerHTML=`<i class="fas fa-${u?'user-check':'user'}"></i>`}
-
 function openService(type){
   $('serviceModal').dataset.type=type;
   const titles={course:'Réserver une course rapide',taxi:'Réserver un taxi privé',insurance:'Demander une assurance',apartment:'Chercher un appartement meublé'};
