@@ -4,14 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1e3a8a">
-  <meta name="description" content="BABA Express — e-commerce, livraison, courses rapides et taxi privé à Dakar.">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./images/logo-baba-express.jpeg">
   <title>BABA Express — E-commerce & Livraison</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -21,12 +15,11 @@
     <nav class="navbar">
       <div class="nav-container">
         <a href="#home" class="logo" aria-label="BABA Express">
-          <img src="./images/logo-baba-express.jpeg" alt="BABA Express">
+          <img src="logo-baba-express.jpeg" alt="BABA Express">
         </a>
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home">Accueil</a></li>
           <li><a href="#products">Produits</a></li>
-          <li><a href="#app">App</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#delivery">Livraison</a></li>
           <li><a href="#about">À propos</a></li>
@@ -49,9 +42,9 @@
     <section id="home" class="hero">
       <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
       <div class="home-banners" id="homeBanners" aria-label="Offres à la une">
-        <article class="home-banner active" style="--banner-image:url('./images/iphone15pro.jpeg')"><div><span>TECH & MOBILITÉ</span><h2>Vos produits premium, livrés à Dakar</h2><a href="#products" class="banner-btn">Découvrir</a></div></article>
-        <article class="home-banner" style="--banner-image:url('./images/casquesony.jpeg')"><div><span>AUDIO</span><h2>Son immersif avec Sony & JBL</h2><a href="#products" class="banner-btn">Voir les produits</a></div></article>
-        <article class="home-banner" style="--banner-image:url('./images/pizza.jpeg')"><div><span>RESTAURANT</span><h2>Commandez et faites-vous livrer</h2><a href="#products" class="banner-btn">Commander</a></div></article>
+        <article class="home-banner active" style="--banner-image:url('iphone15pro.jpeg')"><div><span>TECH & MOBILITÉ</span><h2>Vos produits premium, livrés à Dakar</h2><a href="#products" class="banner-btn">Découvrir</a></div></article>
+        <article class="home-banner" style="--banner-image:url('casquesony.jpeg')"><div><span>AUDIO</span><h2>Son immersif avec Sony & JBL</h2><a href="#products" class="banner-btn">Voir les produits</a></div></article>
+        <article class="home-banner" style="--banner-image:url('pizza.jpeg')"><div><span>RESTAURANT</span><h2>Commandez et faites-vous livrer</h2><a href="#products" class="banner-btn">Commander</a></div></article>
         <div class="banner-dots" id="bannerDots"><button class="active" data-slide="0" aria-label="Affiche 1"></button><button data-slide="1" aria-label="Affiche 2"></button><button data-slide="2" aria-label="Affiche 3"></button></div>
       </div>
       <div class="hero-content">
@@ -64,8 +57,8 @@
         </div>
       </div>
       <div class="hero-stats">
-        <div class="stat glass-3d"><h3>+5000</h3><p>Commandes livrées</p></div>
-        <div class="stat glass-3d"><h3>7/7</h3><p>Service express</p></div>
+        <div class="stat glass-3d"><h3>5000+</h3><p>Commandes livrées</p></div>
+        <div class="stat glass-3d"><h3>24h</h3><p>Service express</p></div>
         <div class="stat glass-3d"><h3>98%</h3><p>Satisfaction client</p></div>
       </div>
     </section>
@@ -90,483 +83,8 @@
           <button class="category-shortcut" data-shortcut="Chaussures"><i class="fas fa-shoe-prints"></i><span>Chaussures</span></button>
           <button class="category-shortcut" data-shortcut="Restaurant"><i class="fas fa-utensils"></i><span>Restaurant</span></button>
         </div>
-        <!-- Images produits : chaque photo est déclarée directement dans le HTML avec <img src="./images/...">. -->
-        <div class="products-grid" id="productsGrid">
-<article class="product-card" data-id="1" data-category="Smartphone" data-name="iPhone 15 Pro" data-price="750000" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/iphone15pro.jpeg" alt="Photo du produit iPhone 15 Pro" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>iPhone 15 Pro</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">iPhone 15 Pro — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">750,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="1"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="1"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="2" data-category="Ordinateur" data-name="MacBook Air M2" data-price="950000" data-rating="4.9">
-  <div class="product-image new">
-    <img class="product-img" src="./images/iphone15pro.jpeg" alt="Photo du produit MacBook Air M2" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>MacBook Air M2</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.9)</span></div>
-    <p class="product-description">MacBook Air M2 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">950,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="2"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="2"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="3" data-category="Audio" data-name="AirPods Pro 2" data-price="175000" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/airpods-pro-2.svg" alt="Photo du produit AirPods Pro 2" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>AirPods Pro 2</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">AirPods Pro 2 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">175,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="3"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="3"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="4" data-category="Tablette" data-name="iPad Pro" data-price="625000" data-rating="4.6">
-  <div class="product-image">
-    <img class="product-img" src="./images/ipad-pro.svg" alt="Photo du produit iPad Pro" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>iPad Pro</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">iPad Pro — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">625,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="4"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="4"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="5" data-category="Montre" data-name="Apple Watch Ultra" data-price="560000" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/apple-watch-ultra.svg" alt="Photo du produit Apple Watch Ultra" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Apple Watch Ultra</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Apple Watch Ultra — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">560,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="5"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="5"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="6" data-category="Accessoire" data-name="Chargeur 65W" data-price="37000" data-rating="4.5">
-  <div class="product-image">
-    <img class="product-img" src="./images/chargeur-65w.svg" alt="Photo du produit Chargeur 65W" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Chargeur 65W</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.5)</span></div>
-    <p class="product-description">Chargeur 65W — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">37,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="6"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="6"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="7" data-category="Smartphone" data-name="Samsung Galaxy S24" data-price="620000" data-rating="4.6">
-  <div class="product-image new">
-    <img class="product-img" src="./images/samsung-s24.svg" alt="Photo du produit Samsung Galaxy S24" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Samsung Galaxy S24</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">Samsung Galaxy S24 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">620,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="7"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="7"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="8" data-category="Smartphone" data-name="Samsung Galaxy A55" data-price="245000" data-rating="4.4">
-  <div class="product-image">
-    <img class="product-img" src="./images/samsung-a55.svg" alt="Photo du produit Samsung Galaxy A55" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Samsung Galaxy A55</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.4)</span></div>
-    <p class="product-description">Samsung Galaxy A55 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">245,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="8"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="8"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="9" data-category="Ordinateur" data-name="Dell XPS 13" data-price="880000" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/dell-xps13.svg" alt="Photo du produit Dell XPS 13" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Dell XPS 13</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Dell XPS 13 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">880,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="9"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="9"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="10" data-category="Ordinateur" data-name="HP Pavilion 15" data-price="410000" data-rating="4.3">
-  <div class="product-image">
-    <img class="product-img" src="./images/hp-pavilion15.svg" alt="Photo du produit HP Pavilion 15" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>HP Pavilion 15</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.3)</span></div>
-    <p class="product-description">HP Pavilion 15 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">410,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="10"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="10"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="11" data-category="Audio" data-name="Enceinte JBL Flip 6" data-price="65000" data-rating="4.6">
-  <div class="product-image new">
-    <img class="product-img" src="./images/jblflip6.jpeg" alt="Photo du produit Enceinte JBL Flip 6" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Enceinte JBL Flip 6</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">Enceinte JBL Flip 6 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">65,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="11"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="11"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="12" data-category="Audio" data-name="Casque Sony WH-1000XM5" data-price="220000" data-rating="4.9">
-  <div class="product-image new">
-    <img class="product-img" src="./images/casquesony.jpeg" alt="Photo du produit Casque Sony WH-1000XM5" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Casque Sony WH-1000XM5</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.9)</span></div>
-    <p class="product-description">Casque Sony WH-1000XM5 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">220,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="12"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="12"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="13" data-category="Tablette" data-name="Samsung Galaxy Tab S9" data-price="480000" data-rating="4.5">
-  <div class="product-image">
-    <img class="product-img" src="./images/galaxy-tab-s9.svg" alt="Photo du produit Samsung Galaxy Tab S9" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Samsung Galaxy Tab S9</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.5)</span></div>
-    <p class="product-description">Samsung Galaxy Tab S9 — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">480,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="13"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="13"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="14" data-category="Montre" data-name="Montre connectée Amazfit" data-price="65000" data-rating="4.2">
-  <div class="product-image">
-    <img class="product-img" src="./images/amazfit.svg" alt="Photo du produit Montre connectée Amazfit" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Montre connectée Amazfit</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.2)</span></div>
-    <p class="product-description">Montre connectée Amazfit — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">65,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="14"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="14"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="15" data-category="Accessoire" data-name="Batterie externe 20000mAh" data-price="22000" data-rating="4.4">
-  <div class="product-image">
-    <img class="product-img" src="./images/powerbank.jpeg" alt="Photo du produit Batterie externe 20000mAh" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Batterie externe 20000mAh</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.4)</span></div>
-    <p class="product-description">Batterie externe 20000mAh — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">22,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="15"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="15"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="16" data-category="Accessoire" data-name="Support téléphone voiture" data-price="8000" data-rating="4.1">
-  <div class="product-image">
-    <img class="product-img" src="./images/support-telephone.svg" alt="Photo du produit Support téléphone voiture" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Support téléphone voiture</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.1)</span></div>
-    <p class="product-description">Support téléphone voiture — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">8,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="16"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="16"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="17" data-category="Accessoire" data-name="Sac à dos PC 15&quot;" data-price="28000" data-rating="4.5">
-  <div class="product-image">
-    <img class="product-img" src="./images/sac-dos-pc.svg" alt="Photo du produit Sac à dos PC 15&quot;" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Sac à dos PC 15&quot;</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.5)</span></div>
-    <p class="product-description">Sac à dos PC 15&quot; — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">28,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="17"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="17"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="18" data-category="Accessoire" data-name="Souris sans fil Logitech" data-price="18000" data-rating="4.6">
-  <div class="product-image">
-    <img class="product-img" src="./images/souris-logitech.svg" alt="Photo du produit Souris sans fil Logitech" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Souris sans fil Logitech</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">Souris sans fil Logitech — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">18,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="18"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="18"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="19" data-category="Téléviseur" data-name="Téléviseur Samsung 55&quot; Smart TV" data-price="425000" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/tv-samsung-55.svg" alt="Photo du produit Téléviseur Samsung 55&quot; Smart TV" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Téléviseur Samsung 55&quot; Smart TV</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Téléviseur Samsung 55&quot; Smart TV — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">425,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="19"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="19"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="20" data-category="Téléviseur" data-name="Téléviseur LG 50&quot; 4K" data-price="365000" data-rating="4.6">
-  <div class="product-image">
-    <img class="product-img" src="./images/tv-lg-50.svg" alt="Photo du produit Téléviseur LG 50&quot; 4K" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Téléviseur LG 50&quot; 4K</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">Téléviseur LG 50&quot; 4K — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">365,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="20"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="20"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="21" data-category="Produits bio" data-name="Panier fruits &amp; légumes bio" data-price="15000" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/panier-bio.svg" alt="Photo du produit Panier fruits &amp; légumes bio" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Panier fruits &amp; légumes bio</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Panier fruits &amp; légumes bio — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">15,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="21"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="21"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="22" data-category="Produits bio" data-name="Huile d’olive bio premium" data-price="12000" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/huile-olive-bio.svg" alt="Photo du produit Huile d’olive bio premium" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Huile d’olive bio premium</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Huile d’olive bio premium — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">12,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="22"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="22"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="23" data-category="Cosmétiques" data-name="Coffret soins visage" data-price="18500" data-rating="4.7">
-  <div class="product-image new">
-    <img class="product-img" src="./images/coffret-soins.svg" alt="Photo du produit Coffret soins visage" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Coffret soins visage</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Coffret soins visage — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">18,500 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="23"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="23"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="24" data-category="Cosmétiques" data-name="Parfum femme premium" data-price="28000" data-rating="4.8">
-  <div class="product-image">
-    <img class="product-img" src="./images/parfum-femme.svg" alt="Photo du produit Parfum femme premium" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Parfum femme premium</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Parfum femme premium — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">28,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="24"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="24"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="25" data-category="Vêtements" data-name="T-shirt premium unisexe" data-price="12000" data-rating="4.6">
-  <div class="product-image">
-    <img class="product-img" src="./images/tshirt-premium.svg" alt="Photo du produit T-shirt premium unisexe" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>T-shirt premium unisexe</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">T-shirt premium unisexe — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">12,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="25"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="25"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="26" data-category="Vêtements" data-name="Ensemble streetwear" data-price="32000" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/streetwear.svg" alt="Photo du produit Ensemble streetwear" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Ensemble streetwear</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Ensemble streetwear — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">32,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="26"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="26"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="27" data-category="Chaussures" data-name="Sneakers Nike style sport" data-price="45000" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/sneakers-sport.svg" alt="Photo du produit Sneakers Nike style sport" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Sneakers Nike style sport</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Sneakers Nike style sport — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">45,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="27"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="27"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="28" data-category="Chaussures" data-name="Sneakers urbaines" data-price="38000" data-rating="4.5">
-  <div class="product-image">
-    <img class="product-img" src="./images/sneakers-urbaines.svg" alt="Photo du produit Sneakers urbaines" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Sneakers urbaines</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.5)</span></div>
-    <p class="product-description">Sneakers urbaines — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">38,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="28"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="28"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="29" data-category="Restaurant" data-name="Menu restaurant — Grillades" data-price="8500" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/brochette.jpeg" alt="Photo du produit Menu restaurant — Grillades" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Menu restaurant — Grillades</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Menu restaurant — Grillades — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">8,500 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="29"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="29"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="30" data-category="Restaurant" data-name="Burger gourmet &amp; frites" data-price="6500" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/burger.jpeg" alt="Photo du produit Burger gourmet &amp; frites" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Burger gourmet &amp; frites</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Burger gourmet &amp; frites — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">6,500 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="30"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="30"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="31" data-category="Restaurant" data-name="Pizza" data-price="5000" data-rating="4.8">
-  <div class="product-image new">
-    <img class="product-img" src="./images/pizza.jpeg" alt="Photo du produit Pizza" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Pizza</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Pizza — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">5,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="31"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="31"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="32" data-category="Restaurant" data-name="Brochette" data-price="1500" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/brochette.jpeg" alt="Photo du produit Brochette" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Brochette</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Brochette — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">1,500 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="32"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="32"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="33" data-category="Restaurant" data-name="Tacos" data-price="2600" data-rating="4.7">
-  <div class="product-image">
-    <img class="product-img" src="./images/tacos.jpeg" alt="Photo du produit Tacos" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Tacos</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.7)</span></div>
-    <p class="product-description">Tacos — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">2,600 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="33"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="33"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="34" data-category="Restaurant" data-name="Fataya" data-price="1000" data-rating="4.6">
-  <div class="product-image">
-    <img class="product-img" src="./images/fataya.jpeg" alt="Photo du produit Fataya" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Fataya</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.6)</span></div>
-    <p class="product-description">Fataya — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">1,000 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="34"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="34"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="35" data-category="Restaurant" data-name="Chawarma" data-price="1500" data-rating="4.8">
-  <div class="product-image">
-    <img class="product-img" src="./images/chawarma.jpeg" alt="Photo du produit Chawarma" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Chawarma</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Chawarma — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">1,500 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="35"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="35"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-<article class="product-card" data-id="36" data-category="Restaurant" data-name="Poulet pané" data-price="3500" data-rating="4.8">
-  <div class="product-image">
-    <img class="product-img" src="./images/poulet-pane.jpeg" alt="Photo du produit Poulet pané" loading="lazy" decoding="async" onerror="imageError(this)">
-  </div>
-  <div class="product-info">
-    <h3>Poulet pané</h3>
-    <div class="product-rating">★★★★☆<span style="color:var(--muted);margin-left:.4rem">(4.8)</span></div>
-    <p class="product-description">Poulet pané — produit sélectionné par BABA Express, disponible à la commande et à la livraison à Dakar.</p>
-    <div class="product-price">3,500 F</div>
-    <div class="product-actions"><button class="product-details-btn" data-details="36"><i class="fas fa-eye"></i> Voir détails</button><button class="product-add" data-add="36"><i class="fas fa-cart-plus"></i> Ajouter</button></div>
-  </div>
-</article>
-        </div>
+        <div class="products-grid" id="productsGrid"></div>
         <div class="empty-state" id="emptyProducts" hidden><i class="fas fa-box-open"></i><h3>Aucun produit trouvé</h3><p>Essayez un autre mot-clé ou une autre catégorie.</p></div>
-      </div>
-    </section>
-
-    <section id="app" class="app-section section-3d">
-      <div class="container">
-        <div class="app-card glass-3d">
-          <div class="app-visual">
-            <div class="app-phone">
-              <div class="app-phone-notch"></div>
-              <div class="app-phone-screen">
-                <img src="./images/logo-baba-express.jpeg" alt="BABA Express" loading="lazy">
-                <strong>BABA Express</strong>
-                <span>Livraison • Courses • Taxi</span>
-                <div class="app-mini-actions"><span>🛒</span><span>🚚</span><span>📍</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="app-copy">
-            <span class="eyebrow"><i class="fas fa-mobile-screen-button"></i> Application BABA Express</span>
-            <h2 class="section-title">Votre BABA Express dans votre téléphone</h2>
-            <p>Installez le site comme une application sur Android, iPhone, tablette ou ordinateur. Le panier, les commandes, le suivi et les préférences restent accessibles depuis votre appareil.</p>
-            <div class="app-features">
-              <span><i class="fas fa-bolt"></i> Rapide</span>
-              <span><i class="fas fa-cart-shopping"></i> Panier</span>
-              <span><i class="fas fa-location-dot"></i> Livraison</span>
-              <span><i class="fas fa-moon"></i> Mode sombre</span>
-            </div>
-            <div class="app-downloads">
-              <button class="store-btn install-app-btn" id="installAppBtn" type="button">
-                <i class="fas fa-download"></i><span><small>Installer</small><strong>L'application</strong></span>
-              </button>
-              <a class="store-btn" href="#" data-store-placeholder="android" aria-label="Application Android bientôt disponible">
-                <i class="fab fa-google-play"></i><span><small>Bientôt sur</small><strong>Google Play</strong></span>
-              </a>
-              <a class="store-btn" href="#" data-store-placeholder="ios" aria-label="Application iPhone bientôt disponible">
-                <i class="fab fa-apple"></i><span><small>Bientôt sur</small><strong>App Store</strong></span>
-              </a>
-            </div>
-            <p class="app-install-note" id="appInstallNote">Sur iPhone : Safari → Partager → « Sur l’écran d’accueil ». Sur Android/Chrome : utilisez « Installer l’application » lorsque le navigateur le propose.</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -647,21 +165,21 @@
   <section class="partners-section" aria-label="Partenaires">
     <div class="container"><div class="section-heading centered"><span class="eyebrow">Écosystème</span><h2 class="section-title">Nos partenaires</h2><p>Un bandeau de logos défilant pour présenter vos partenaires et solutions.</p></div>
       <div class="partners-marquee"><div class="partners-track">
-        <div class="partner-logo wave-logo"><img src="./images/wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
-        <div class="partner-logo orange-logo"><img src="./images/orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
+        <div class="partner-logo wave-logo"><img src="wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
+        <div class="partner-logo orange-logo"><img src="orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-truck-fast"></i><strong>Express Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-store"></i><strong>Commerce Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-building"></i><strong>Immo Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-shield-halved"></i><strong>Assurance Partner</strong></div>
-        <div class="partner-logo wave-logo"><img src="./images/wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
-        <div class="partner-logo orange-logo"><img src="./images/orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
+        <div class="partner-logo wave-logo"><img src="wave-senegal-mobile-money.webp" alt="Wave"><strong>Wave</strong></div>
+        <div class="partner-logo orange-logo"><img src="orange-money-et-wave-768x446.jpeg" alt="Orange Money"><strong>Orange Money</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-truck-fast"></i><strong>Express Partner</strong></div>
         <div class="partner-logo text-logo"><i class="fas fa-store"></i><strong>Commerce Partner</strong></div>
       </div></div>
     </div>
   </section>
 
-  <footer class="footer" id="contact"><div class="container"><div class="footer-content"><div class="footer-section"><a href="#home" class="logo footer-logo"><img src="./images/logo-baba-express.jpeg" alt="BABA Express"></a><p>Livraison rapide et fiable 24h/24</p><p>Paiement Wave et Orange Money</p></div><div class="footer-section"><h4>Services</h4><ul><li><a href="#delivery">Livraison Express</a></li><li><a href="#delivery">Suivi Colis</a></li><li><a href="#services">Course rapide</a></li><li><a href="#services">Taxi privé</a></li></ul></div><div class="footer-section"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +221 78 275 95 95</li><li><i class="fas fa-envelope"></i> contact@baba-express.sn</li><li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p></div></div></footer>
-  <script src="./script.js"></script>
+  <footer class="footer" id="contact"><div class="container"><div class="footer-content"><div class="footer-section"><a href="#home" class="logo footer-logo"><img src="logo-baba-express.jpeg" alt="BABA Express"></a><p>Livraison rapide et fiable 24h/24</p><p>Paiement Wave et Orange Money</p></div><div class="footer-section"><h4>Services</h4><ul><li><a href="#delivery">Livraison Express</a></li><li><a href="#delivery">Suivi Colis</a></li><li><a href="#services">Course rapide</a></li><li><a href="#services">Taxi privé</a></li></ul></div><div class="footer-section"><h4>Contact</h4><ul><li><i class="fas fa-phone"></i> +221 78 275 95 95</li><li><i class="fas fa-envelope"></i> contact@baba-express.sn</li><li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Developed by BABASOFT DAKAR. Tous droits réservés.</p></div></div></footer>
+  <script src="script.js"></script>
 </body>
 </html>
