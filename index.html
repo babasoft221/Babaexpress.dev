@@ -27,7 +27,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-icons">
-          <button class="icon-btn" id="voiceSearchBtn" title="Recherche vocale" aria-label="Recherche vocale"><i class="fas fa-microphone"></i></button>
           <button class="icon-btn" id="themeToggle" title="Rétro éclairage" aria-label="Rétro éclairage"><i class="fas fa-moon"></i></button>
           <button class="subscribe-btn" id="subscribeBtn" type="button" title="S'abonner">
             <i class="fas fa-bell"></i><span>S'abonner</span>
@@ -156,6 +155,17 @@
 
     <section id="about" class="about section-3d"><div class="container"><div class="about-card glass-3d"><span class="eyebrow">BABA Express</span><h2 class="section-title">Un service pensé pour Dakar</h2><p>BABA Express combine e-commerce, livraison, course rapide et taxi privé dans une interface moderne, responsive et simple à utiliser.</p><div class="about-pills"><span><i class="fas fa-mobile-alt"></i> Mobile friendly</span><span><i class="fas fa-bolt"></i> Rapide</span><span><i class="fas fa-map-marked-alt"></i> Suivi</span></div></div></div></section>
   </main>
+
+  <!-- Détail produit -->
+  <div class="modal" id="productDetailModal" aria-hidden="true">
+    <div class="modal-content product-detail-modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-box-open"></i> Détail du produit</h3>
+        <button class="close" id="closeProductDetail" aria-label="Fermer">&times;</button>
+      </div>
+      <div id="productDetailBody"></div>
+    </div>
+  </div>
 
   <!-- Panier -->
   <div class="modal" id="cartModal" aria-hidden="true"><div class="modal-content cart-modal-content"><div class="modal-header"><h3><i class="fas fa-shopping-cart"></i> Mon Panier</h3><button class="close" id="closeCart" aria-label="Fermer">&times;</button></div><div class="cart-items" id="cartItems"></div><button type="button" class="clear-cart" id="clearCartBtn" hidden>Vider le panier</button><div class="cart-total"><span>Total</span><strong id="cartTotal">0 F</strong></div><div class="delivery-form"><h4>Informations de livraison</h4><input type="text" id="customerName" placeholder="Nom complet"><input type="tel" id="customerPhone" placeholder="Numéro de téléphone"><textarea id="deliveryAddress" placeholder="Adresse de livraison (quartier, rue, ville...)" rows="2"></textarea><select id="paymentMethod"><option value="À la livraison">Paiement à la livraison</option><option value="Wave">Wave</option><option value="Orange Money">Orange Money</option></select></div><button class="btn-primary checkout-btn" id="checkoutBtn"><i class="fab fa-whatsapp"></i> Valider la commande</button></div></div>
