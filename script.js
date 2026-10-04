@@ -1,43 +1,43 @@
 'use strict';
 
 const products = [
-  {id:1,name:'iPhone 15 Pro',price:750000,image:'images/iphone15pro.jpeg',category:'Smartphone',rating:4.8,new:true},
-  {id:2,name:'MacBook Air M2',price:950000,image:'https://media.power-cdn.net/images/h-45e5d5b35ed60f9eab952fa55ceda4db/products/3746370/3746370_3_1200x1200_w_g.jpg',category:'Ordinateur',rating:4.9,new:true},
-  {id:3,name:'AirPods Pro 2',price:175000,image:'https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/APAIRPRO2C_B_airpods_pro_2nd_generation_with_magsafe_case_usb_c_.jpg',category:'Audio',rating:4.7},
-  {id:4,name:'iPad Pro',price:625000,image:'https://bizweb.dktcdn.net/100/459/953/products/ipad-pro-m2-silver-ede8804e-d454-4b10-b063-a5ca7a247b3d.jpg?v=1723807563663',category:'Tablette',rating:4.6},
-  {id:5,name:'Apple Watch Ultra',price:560000,image:'https://static1.nordic.pictures/37745099-thickbox_default/apple-watch-ultra-gps-cellular-49mm-alpine-loop-s-orange-mnhh3el-a.jpg',category:'Montre',rating:4.8,new:true},
-  {id:6,name:'Chargeur 65W',price:37000,image:'https://pecsipc.hu/files/uploads/2025/02/ugreen-nexode-s-65w-3-port-gan-fast-charger-eu-grey_1.jpg',category:'Accessoire',rating:4.5},
-  {id:7,name:'Samsung Galaxy S24',price:620000,image:'https://media.gadgetbytenepal.com/2024/01/Samsung-Galaxy-S24-Marble-Grey.jpg',category:'Smartphone',rating:4.6,new:true},
-  {id:8,name:'Samsung Galaxy A55',price:245000,image:'https://www.fonel.com/web/image/product.template/2501/image_1024?unique=668405e',category:'Smartphone',rating:4.4},
-  {id:9,name:'Dell XPS 13',price:880000,image:'https://cdn.lesnumeriques.com/optim/product/75/75507/d49fd532-xps-13-2024-core-ultra-2_png__1200_900__overflow.jpg',category:'Ordinateur',rating:4.7},
-  {id:10,name:'HP Pavilion 15',price:410000,image:'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6510/6510528_sd.jpg',category:'Ordinateur',rating:4.3},
-  {id:11,name:'Enceinte JBL Flip 6',price:65000,image:'images/jblflip6.jpeg',category:'Audio',rating:4.6,new:true},
-  {id:12,name:'Casque Sony WH-1000XM5',price:220000,image:'images/casquesony.jpeg',category:'Audio',rating:4.9,new:true},
-  {id:13,name:'Samsung Galaxy Tab S9',price:480000,image:'https://www.arlt.com/out/pictures/master/product/1/Samsung_SM-X710NZAAEUE_INT_1.jpg',category:'Tablette',rating:4.5},
-  {id:14,name:'Montre connectée Amazfit',price:65000,image:'https://storeimages.kickmobiles.com/ebayimages/amazfit/gts_4/wifi_bt/black/1.jpg',category:'Montre',rating:4.2},
-  {id:15,name:'Batterie externe 20000mAh',price:22000,image:'images/powerbank.jpeg',category:'Accessoire',rating:4.4},
-  {id:16,name:'Support téléphone voiture',price:8000,image:'https://item-shopping.c.yimg.jp/i/n/amuza-butiko_20240819-17523_6_d_20240819104757',category:'Accessoire',rating:4.1},
-  {id:17,name:'Sac à dos PC 15"',price:28000,image:'https://coralrsprod.blob.core.windows.net/storage/media/images/products/2026/03/0-56691700-1771500018_6d3eef60.jpg',category:'Accessoire',rating:4.5},
-  {id:18,name:'Souris sans fil Logitech',price:18000,image:'https://techlifebd.com/public/uploads/products/meta/WOnZksWeh1duLIzeNpojJbJMhrJTzpCWTPY1vQ9X.jpeg',category:'Accessoire',rating:4.6},
-{id:19,name:'Téléviseur Samsung 55" Smart TV',price:425000,image:'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=85',category:'Téléviseur',rating:4.8,new:true},
-  {id:20,name:'Téléviseur LG 50" 4K',price:365000,image:'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=900&q=85',category:'Téléviseur',rating:4.6},
-  {id:21,name:'Panier fruits & légumes bio',price:15000,image:'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85',category:'Produits bio',rating:4.8,new:true},
-  {id:22,name:'Huile d’olive bio premium',price:12000,image:'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85',category:'Produits bio',rating:4.7},
-  {id:23,name:'Coffret soins visage',price:18500,image:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85',category:'Cosmétiques',rating:4.7,new:true},
-  {id:24,name:'Parfum femme premium',price:28000,image:'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85',category:'Cosmétiques',rating:4.8},
-  {id:25,name:'T-shirt premium unisexe',price:12000,image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85',category:'Vêtements',rating:4.6},
-  {id:26,name:'Ensemble streetwear',price:32000,image:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85',category:'Vêtements',rating:4.7},
-  {id:27,name:'Sneakers Nike style sport',price:45000,image:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85',category:'Chaussures',rating:4.8,new:true},
-  {id:28,name:'Sneakers urbaines',price:38000,image:'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85',category:'Chaussures',rating:4.5},
-  {id:29,name:'Menu restaurant — Grillades',price:8500,image:'images/brochette.jpeg',category:'Restaurant',rating:4.8,new:true},
-  {id:30,name:'Burger gourmet & frites',price:6500,image:'images/burger.jpeg',category:'Restaurant',rating:4.7},
-  {id:31,name:'Burger maison XL',price:5500,image:'images/burger2.jpeg',category:'Restaurant',rating:4.6},
-  {id:32,name:'Chawarma poulet',price:2500,image:'images/chawarma.jpeg',category:'Restaurant',rating:4.7},
-  {id:33,name:'Fataya (portion de 5)',price:2000,image:'images/fataya.jpeg',category:'Restaurant',rating:4.5},
-  {id:34,name:'Pizza maison',price:6000,image:'images/pizza.jpeg',category:'Restaurant',rating:4.7},
-  {id:35,name:'Poulet pané & frites',price:4500,image:'images/poulet-pane.jpeg',category:'Restaurant',rating:4.6},
-  {id:36,name:'Tacos poulet',price:3500,image:'images/tacos.jpeg',category:'Restaurant',rating:4.6},
-  {id:37,name:'Jus de bissap frais',price:1000,image:'images/jusbissap.webp',category:'Restaurant',rating:4.8}
+  {id:1,name:'iPhone 15 Pro',price:750000,image:'images/iphone15pro.jpeg',category:'Smartphone',rating:4.8,new:true,description:"Smartphone haut de gamme avec écran Pro, excellent appareil photo et performances fluides."},
+  {id:2,name:'MacBook Air M2',price:950000,image:'images/product-02.svg',category:'Ordinateur',rating:4.9,new:true,description:"Ordinateur portable fin et léger, adapté au travail, aux études et à la création de contenu."},
+  {id:3,name:'AirPods Pro 2',price:175000,image:'images/product-03.svg',category:'Audio',rating:4.7,description:"Écouteurs sans fil avec réduction de bruit active et boîtier de recharge."},
+  {id:4,name:'iPad Pro',price:625000,image:'images/product-04.svg',category:'Tablette',rating:4.6,description:"Tablette grand écran pensée pour la productivité, le multimédia et la création."},
+  {id:5,name:'Apple Watch Ultra',price:560000,image:'images/product-05.svg',category:'Montre',rating:4.8,new:true,description:"Montre connectée robuste avec suivi sportif, notifications et autonomie longue durée."},
+  {id:6,name:'Chargeur 65W',price:37000,image:'images/product-06.svg',category:'Accessoire',rating:4.5,description:"Chargeur rapide multiports pratique pour smartphone, tablette et autres appareils compatibles."},
+  {id:7,name:'Samsung Galaxy S24',price:620000,image:'images/product-07.svg',category:'Smartphone',rating:4.6,new:true,description:"Smartphone Samsung premium avec écran haute qualité, bonnes performances et photo avancée."},
+  {id:8,name:'Samsung Galaxy A55',price:245000,image:'images/product-08.svg',category:'Smartphone',rating:4.4,description:"Smartphone polyvalent avec grand écran, bonne autonomie et usage quotidien confortable."},
+  {id:9,name:'Dell XPS 13',price:880000,image:'images/product-09.svg',category:'Ordinateur',rating:4.7,description:"Ultrabook premium compact, puissant et facile à transporter pour le travail mobile."},
+  {id:10,name:'HP Pavilion 15',price:410000,image:'images/product-10.svg',category:'Ordinateur',rating:4.3,description:"PC portable polyvalent pour bureautique, études, navigation et multimédia."},
+  {id:11,name:'Enceinte JBL Flip 6',price:65000,image:'images/jblflip6.jpeg',category:'Audio',rating:4.6,new:true,description:"Enceinte Bluetooth compacte offrant un son puissant et une bonne autonomie."},
+  {id:12,name:'Casque Sony WH-1000XM5',price:220000,image:'images/casquesony.jpeg',category:'Audio',rating:4.9,new:true,description:"Casque audio premium avec réduction de bruit et écoute confortable."},
+  {id:13,name:'Samsung Galaxy Tab S9',price:480000,image:'images/product-13.svg',category:'Tablette',rating:4.5,description:"Tablette Android premium avec grand écran, performances fluides et usage multimédia."},
+  {id:14,name:'Montre connectée Amazfit',price:65000,image:'images/product-14.svg',category:'Montre',rating:4.2,description:"Montre connectée élégante pour sport, notifications et suivi de l'activité quotidienne."},
+  {id:15,name:'Batterie externe 20000mAh',price:22000,image:'images/powerbank.jpeg',category:'Accessoire',rating:4.4,description:"Batterie externe 20 000 mAh pour recharger vos appareils lors de vos déplacements."},
+  {id:16,name:'Support téléphone voiture',price:8000,image:'images/product-16.svg',category:'Accessoire',rating:4.1,description:"Support de téléphone pratique pour maintenir votre smartphone en sécurité dans la voiture."},
+  {id:17,name:'Sac à dos PC 15"',price:28000,image:'images/product-17.svg',category:'Accessoire',rating:4.5,description:"Sac à dos renforcé avec compartiment PC, pratique pour les déplacements professionnels."},
+  {id:18,name:'Souris sans fil Logitech',price:18000,image:'images/product-18.svg',category:'Accessoire',rating:4.6,description:"Souris sans fil confortable pour bureau, télétravail et usage quotidien."},
+{id:19,name:'Téléviseur Samsung 55" Smart TV',price:425000,image:'images/product-19.svg',category:'Téléviseur',rating:4.8,new:true,description:"Téléviseur Samsung grand écran avec fonctions Smart TV pour films, séries et sport."},
+  {id:20,name:'Téléviseur LG 50" 4K',price:365000,image:'images/product-20.svg',category:'Téléviseur',rating:4.6,description:"Téléviseur LG 4K grand écran avec image détaillée et fonctions connectées."},
+  {id:21,name:'Panier fruits & légumes bio',price:15000,image:'images/product-21.svg',category:'Produits bio',rating:4.8,new:true,description:"Sélection de fruits et légumes bio pour une alimentation fraîche et variée."},
+  {id:22,name:'Huile d’olive bio premium',price:12000,image:'images/product-22.svg',category:'Produits bio',rating:4.7,description:"Huile d'olive bio premium adaptée à la cuisine et aux assaisonnements."},
+  {id:23,name:'Coffret soins visage',price:18500,image:'images/product-23.svg',category:'Cosmétiques',rating:4.7,new:true,description:"Coffret de soins visage pour une routine beauté quotidienne."},
+  {id:24,name:'Parfum femme premium',price:28000,image:'images/product-24.svg',category:'Cosmétiques',rating:4.8,description:"Parfum féminin élégant au format pratique, idéal pour une utilisation quotidienne."},
+  {id:25,name:'T-shirt premium unisexe',price:12000,image:'images/product-25.svg',category:'Vêtements',rating:4.6,description:"T-shirt unisexe confortable et facile à porter au quotidien."},
+  {id:26,name:'Ensemble streetwear',price:32000,image:'images/product-26.svg',category:'Vêtements',rating:4.7,description:"Ensemble streetwear tendance pour une tenue urbaine décontractée."},
+  {id:27,name:'Sneakers Nike style sport',price:45000,image:'images/product-27.svg',category:'Chaussures',rating:4.8,new:true,description:"Sneakers sport au design dynamique, adaptées aux sorties et à la marche."},
+  {id:28,name:'Sneakers urbaines',price:38000,image:'images/product-28.svg',category:'Chaussures',rating:4.5,description:"Sneakers urbaines confortables pour accompagner vos tenues quotidiennes."},
+  {id:29,name:'Menu restaurant — Grillades',price:8500,image:'images/brochette.jpeg',category:'Restaurant',rating:4.8,new:true,description:"Assortiment de grillades préparées à la commande, idéal pour un repas gourmand."},
+  {id:30,name:'Burger gourmet & frites',price:6500,image:'images/burger.jpeg',category:'Restaurant',rating:4.7,description:"Burger gourmet accompagné de frites, servi pour un repas rapide et généreux."},
+  {id:31,name:'Burger maison XL',price:5500,image:'images/burger2.jpeg',category:'Restaurant',rating:4.6,description:"Burger maison XL avec garniture généreuse pour les grandes faims."},
+  {id:32,name:'Chawarma poulet',price:2500,image:'images/chawarma.jpeg',category:'Restaurant',rating:4.7,description:"Chawarma au poulet préparé avec garniture et sauce, idéal pour un repas rapide."},
+  {id:33,name:'Fataya (portion de 5)',price:2000,image:'images/fataya.jpeg',category:'Restaurant',rating:4.5,description:"Portion de cinq fatayas croustillants, parfaite à partager ou pour une petite faim."},
+  {id:34,name:'Pizza maison',price:6000,image:'images/pizza.jpeg',category:'Restaurant',rating:4.7,description:"Pizza maison généreuse, préparée pour un repas convivial."},
+  {id:35,name:'Poulet pané & frites',price:4500,image:'images/poulet-pane.jpeg',category:'Restaurant',rating:4.6,description:"Poulet pané croustillant accompagné de frites."},
+  {id:36,name:'Tacos poulet',price:3500,image:'images/tacos.jpeg',category:'Restaurant',rating:4.6,description:"Tacos au poulet généreux, pratique pour un repas rapide."},
+  {id:37,name:'Jus de bissap frais',price:1000,image:'images/jusbissap.webp',category:'Restaurant',rating:4.8,description:"Jus de bissap frais, boisson traditionnelle rafraîchissante."}
 ];
 
 const BUSINESS_WHATSAPP='221782759595';
@@ -66,8 +66,8 @@ document.addEventListener('click',e=>{
 });
 
 window.addEventListener('DOMContentLoaded',()=>{
-  renderCategoryFilters();renderProducts();updateCartCount();restoreTheme();
-  $('cartIcon').addEventListener('click',openCart);initHomeBanners();initVoiceSearch();$('closeCart').addEventListener('click',closeCart);
+  renderCategoryFilters();renderProducts();updateCartCount();restoreTheme();$('closeProductDetail').addEventListener('click',closeProductDetail);
+  $('cartIcon').addEventListener('click',openCart);initHomeBanners();$('closeCart').addEventListener('click',closeCart);
   $('closeTicket').addEventListener('click',closeTicket);$('printTicketBtn').addEventListener('click',printTicket);
   $('checkoutBtn').addEventListener('click',checkout);$('locateBtn').addEventListener('click',locateUser);$('trackBtn').addEventListener('click',trackPackage);
   $('productSearch').addEventListener('input',e=>{searchTerm=e.target.value.trim().toLowerCase();renderProducts()});$('clearSearch').addEventListener('click',()=>{$('productSearch').value='';searchTerm='';renderProducts();$('productSearch').focus()});
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.category-shortcut').forEach(btn=>btn.addEventListener('click',()=>{activeCategory=btn.dataset.shortcut;renderCategoryFilters();renderProducts();$('products').scrollIntoView({behavior:'smooth'});}));$('closeService').addEventListener('click',closeService);$('serviceForm').addEventListener('submit',submitService);
   document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});$('navMenu').classList.remove('active');$('hamburger').classList.remove('active')}}));
   $('hamburger').addEventListener('click',()=>{$('navMenu').classList.toggle('active');$('hamburger').classList.toggle('active')});
-  window.addEventListener('click',e=>{['cartModal','ticketModal','authModal','serviceModal'].forEach(id=>{const m=$(id);if(e.target===m)m.classList.remove('open')})});
+  window.addEventListener('click',e=>{['cartModal','ticketModal','authModal','serviceModal','productDetailModal'].forEach(id=>{const m=$(id);if(e.target===m)m.classList.remove('open')})});
   initLiveMap();
   $('productsGrid').addEventListener('click',onGridClick);$('clearCartBtn').addEventListener('click',clearCart);
 });
@@ -95,13 +95,53 @@ function renderProducts(){
   const grid=$('productsGrid');
   const filtered=products.filter(p=>(activeCategory==='Tous'||(activeCategory==='Favoris'?favs.includes(p.id):p.category===activeCategory))&&(!searchTerm||`${p.name} ${p.category}`.toLowerCase().includes(searchTerm)));
   $('productCounter').textContent=`${filtered.length} produit${filtered.length>1?'s':''}`;
-  grid.innerHTML=filtered.map((p,i)=>`<article class="product-card" data-id="${p.id}" style="animation-delay:${i*35}ms"><div class="product-image ${p.new?'new':''}"><button type="button" class="fav-btn ${favs.includes(p.id)?'active':''}" data-fav="${p.id}" aria-label="Ajouter aux favoris"><i class="fas fa-heart"></i></button><img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="imgFallback(this)"></div><div class="product-info"><h3>${escapeHtml(p.name)}</h3><div class="product-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}<span style="color:var(--muted);margin-left:.4rem">(${p.rating})</span></div><div class="product-price">${money(p.price)}</div><button type="button" class="product-add" data-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter au panier</button></div></article>`).join('');
+  grid.innerHTML=filtered.map((p,i)=>`<article class="product-card" data-id="${p.id}" style="animation-delay:${i*35}ms">
+    <div class="product-image ${p.new?'new':''}">
+      <button type="button" class="fav-btn ${favs.includes(p.id)?'active':''}" data-fav="${p.id}" aria-label="Ajouter aux favoris"><i class="fas fa-heart"></i></button>
+      <img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="imgFallback(this)">
+    </div>
+    <div class="product-info">
+      <span class="product-category">${escapeHtml(p.category)}</span>
+      <h3>${escapeHtml(p.name)}</h3>
+      <div class="product-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}<span style="color:var(--muted);margin-left:.4rem">(${p.rating})</span></div>
+      <div class="product-price">${money(p.price)}</div>
+      <div class="product-actions">
+        <button type="button" class="product-details" data-details="${p.id}"><i class="fas fa-eye"></i> Détails</button>
+        <button type="button" class="product-add" data-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter</button>
+      </div>
+    </div>
+  </article>`).join('');
   $('emptyProducts').hidden=filtered.length>0;
 }
 function onGridClick(e){
   const add=e.target.closest('[data-add]');if(add){addToCart(Number(add.dataset.add),add);return}
+  const detail=e.target.closest('[data-details]');if(detail){openProductDetail(Number(detail.dataset.details));return}
   const fav=e.target.closest('[data-fav]');if(fav)toggleFav(Number(fav.dataset.fav),fav);
 }
+function openProductDetail(id){
+  const p=products.find(x=>x.id===id); if(!p)return;
+  const modal=$('productDetailModal'), body=$('productDetailBody');
+  body.innerHTML=`<div class="product-detail-layout">
+    <div class="product-detail-image"><img src="${p.image}" alt="${escapeHtml(p.name)}" onerror="imgFallback(this)"></div>
+    <div class="product-detail-info">
+      <span class="product-category">${escapeHtml(p.category)}</span>
+      <h2>${escapeHtml(p.name)}</h2>
+      <div class="product-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))} <span>(${p.rating}/5)</span></div>
+      <div class="product-detail-price">${money(p.price)}</div>
+      <p class="product-description">${escapeHtml(p.description || 'Produit sélectionné par BABA Express. Qualité, disponibilité et livraison à Dakar selon les conditions affichées.')}</p>
+      <ul class="product-specs">
+        <li><i class="fas fa-check-circle"></i><span>Catégorie</span><strong>${escapeHtml(p.category)}</strong></li>
+        <li><i class="fas fa-truck"></i><span>Livraison</span><strong>Dakar & environs</strong></li>
+        <li><i class="fas fa-shield-alt"></i><span>Service</span><strong>BABA Express</strong></li>
+      </ul>
+      <button type="button" class="product-add detail-add" data-detail-add="${p.id}"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+    </div>
+  </div>`;
+  modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+  body.querySelector('[data-detail-add]').addEventListener('click',function(){addToCart(p.id,this);});
+}
+function closeProductDetail(){$('productDetailModal').classList.remove('open');$('productDetailModal').setAttribute('aria-hidden','true')}
+
 function toggleFav(id,btn){
   favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];
   try{localStorage.setItem('babaFavs',JSON.stringify(favs))}catch(_){}
