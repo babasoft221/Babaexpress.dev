@@ -123,3 +123,47 @@ label input:focus,label select:focus,label textarea:focus{border-color:var(--red
  body *{visibility:hidden!important}.ticket,.ticket *{visibility:visible!important}.ticket{position:absolute;left:0;top:0;width:100%;box-shadow:none!important}
  .ticket-actions,.ticket-top .close-btn{display:none!important}
 }
+
+/* Photos de produits locales, adaptées aux cartes et aux petits écrans */
+.product-img{overflow:hidden}
+.product-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit}
+.product-img .product-photo{position:absolute;inset:0}
+.product-tag{z-index:2}
+.product-fallback{position:relative;z-index:1;font-size:inherit}
+.product-fallback[hidden],.cart-fallback[hidden]{display:none}
+.hero-circle{overflow:hidden;display:grid;place-items:center}
+.hero-circle img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.cart-img{overflow:hidden;position:relative}
+.cart-photo{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
+.cart-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:30px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(217,4,41,.35);outline-offset:2px}
+@media(max-width:760px){
+ .topbar{gap:8px}
+ .brand{gap:8px;min-width:0}
+ .brand strong{font-size:15px;letter-spacing:-.3px}
+ .brand small{font-size:9px}
+ .brand-mark{width:36px;height:36px;font-size:20px;border-radius:12px;flex-shrink:0}
+ .top-actions{gap:6px}
+ .icon-btn{width:38px;height:38px}
+ .cart-btn{height:40px;padding:0 9px;gap:5px;font-size:12px}
+ .hero-circle{max-width:190px;max-height:190px}
+ .product{min-width:0;padding:10px;border-radius:20px}
+ .product-img{overflow:hidden}
+ .product-bottom{gap:7px;align-items:flex-start;flex-direction:column}
+ .add-btn{width:100%;font-size:11px}
+ .price{font-size:14px}
+ .modal-overlay{padding:10px}
+ .modal,.ticket{padding:18px;border-radius:22px;max-height:94vh}
+ .drawer{padding:18px}
+}
+@media(max-width:360px){
+ .app-shell{padding:0 10px}
+ .brand strong{font-size:13px}
+ .brand-mark{width:32px;height:32px}
+ .cart-btn b{display:none}
+ .hero{padding:28px 18px;min-height:440px;border-radius:26px}
+ .hero h1{font-size:39px}
+ .product-grid{gap:9px}
+ .product h3{font-size:13px}
+ .product p{font-size:10px}
+}
