@@ -21,34 +21,14 @@ const products = [
   {id:20,name:"Jus Bissap",cat:"Boissons",price:1200,emoji:"🧃",desc:"Jus de bissap frais maison"}
 ];
 
-function readStoredCart(){
-  try {
-    const saved = JSON.parse(localStorage.getItem("fastgo_cart") || "[]");
-    return Array.isArray(saved) ? saved.filter(item => item && Number.isFinite(Number(item.id)) && Number(item.qty) > 0) : [];
-  } catch (error) { return []; }
-}
-let cart = readStoredCart();
+let cart = JSON.parse(localStorage.getItem("fastgo_cart") || "[]");
 let activeCategory = "Tous";
 const DELIVERY_FEE = 1000;
-
-// Images locales : les chemins relatifs fonctionnent aussi sur un dépôt GitHub Pages.
-const productImages = {
-  1: "./burger2.jpeg", 2: "./burger.jpeg", 3: "./burger.jpeg", 4: "./burger.jpeg",
-  5: "./pizza.jpeg", 6: "./pizza.jpeg", 7: "./pizza.jpeg", 8: "./pizza.jpeg",
-  9: "./tacos.jpeg", 10: "./tacos.jpeg", 11: "./poulet-pane.jpeg", 12: "./poulet-pane.jpeg",
-  13: "./chawarma.jpeg", 14: "./chawarma.jpeg", 16: "./poulet-pane.jpeg",
-  17: "./jusbissap.webp", 18: "./jusbissap.webp", 19: "./jusbissap.webp", 20: "./jusbissap.webp"
-};
-function imageMarkup(product, className = "product-photo") {
-  const src = productImages[product.id];
-  const alt = String(product.name || "Produit du menu").replace(/[&<>"']/g, "");
-  return src ? `<img class="${className}" src="${src}" alt="${alt}" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">` : "";
-}
 
 const $ = s => document.querySelector(s);
 const money = n => new Intl.NumberFormat("fr-FR").format(n) + " FCFA";
 
-function saveCart(){try { localStorage.setItem("fastgo_cart",JSON.stringify(cart)); } catch (error) { console.warn("Sauvegarde locale indisponible.", error); }}
+function saveCart(){localStorage.setItem("fastgo_cart",JSON.stringify(cart));}
 function cartCount(){return cart.reduce((s,i)=>s+i.qty,0)}
 function subtotal(){return cart.reduce((s,i)=>s+i.price*i.qty,0)}
 function total(){return cart.length ? subtotal()+DELIVERY_FEE : DELIVERY_FEE}
@@ -66,8 +46,7 @@ function renderProducts(){
     <article class="product">
       <div class="product-img">
         ${p.tag?`<span class="product-tag">${p.tag}</span>`:""}
-        ${imageMarkup(p)}
-        <span class="product-fallback" ${productImages[p.id] ? "hidden" : ""}>${p.emoji}</span>
+        <span>${p.emoji}</span>
       </div>
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
@@ -104,7 +83,7 @@ function renderCart(){
   $("#cartEmpty").style.display=cart.length?"none":"block";
   $("#cartItems").innerHTML=cart.map(i=>`
     <div class="cart-line">
-      <div class="cart-img">${imageMarkup(i, "cart-photo")}<span class="cart-fallback" ${productImages[i.id] ? "hidden" : ""}>${i.emoji || "🍽️"}</span></div>
+      <div class="cart-img">${i.emoji}</div>
       <div>
         <h4>${i.name}</h4>
         <p>${money(i.price)} / unité</p>
@@ -149,7 +128,7 @@ function validateOrder(e){
   const data=Object.fromEntries(new FormData(e.target).entries());
   const ticket=makeTicketNumber();
   const order={ticket,...data,items:cart.map(x=>({...x})),subtotal:subtotal(),delivery:DELIVERY_FEE,total:total(),date:new Date().toISOString()};
-  try { localStorage.setItem("fastgo_last_order",JSON.stringify(order)); } catch (error) { console.warn("Historique local indisponible.", error); }
+  localStorage.setItem("fastgo_last_order",JSON.stringify(order));
 
   $("#ticketNumber").textContent=ticket;
   $("#ticketClient").textContent=data.name;
@@ -186,9 +165,9 @@ $("#printTicket").onclick=()=>window.print();
 
 $("#themeBtn").onclick=()=>{
   document.body.classList.toggle("dark");
-  try { localStorage.setItem("fastgo_theme",document.body.classList.contains("dark")?"dark":"light"); } catch (error) {}
+  localStorage.setItem("fastgo_theme",document.body.classList.contains("dark")?"dark":"light");
 };
-try { if(localStorage.getItem("fastgo_theme")==="dark")document.body.classList.add("dark"); } catch (error) {}
+if(localStorage.getItem("fastgo_theme")==="dark")document.body.classList.add("dark");
 
 renderCategories();
 renderProducts();
