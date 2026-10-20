@@ -1,1 +1,202 @@
-<h1>  ...OUPS ERROR !</h1>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d90429" />
+  <title>FAST&GO — Menu Fast Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">BE</div>
+        <div>
+          <strong>BABA <span> EXPRESS</span></strong>
+          <small>Food • Delivery</small>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="themeBtn" title="Mode sombre">◐</button>
+        <button class="cart-btn" id="openCartBtn">
+          <span>🛒</span>
+          <b>Panier</b>
+          <em id="cartCount">0</em>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">MENU • LIVRAISON RAPIDE</p>
+          <h1>Ton repas.<br><span>Ton plaisir.</span></h1>
+          <p class="hero-text">Choisis ton menu, ajoute-le au panier et renseigne tes informations de livraison.</p>
+          <button class="primary-btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+            Voir le menu <span>→</span>
+          </button>
+        </div>
+        <div class="hero-food">
+          <div class="hero-circle"></div>
+          <div class="floating-badge">🔥 Populaire</div>
+          <div class="food-emoji">🍔</div>
+        </div>
+      </section>
+
+      <section class="section-head" id="menu">
+        <div>
+          <p class="eyebrow">DÉCOUVRIR</p>
+          <h2>Notre menu</h2>
+        </div>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Rechercher..." />
+        </div>
+      </section>
+      <div class="categories" id="categories"></div>
+      <section class="product-grid" id="productGrid"></section>
+
+      <section class="delivery-section" id="delivery">
+        <div class="delivery-card">
+          <div class="delivery-icon">🚴</div>
+          <div>
+            <p class="eyebrow">LIVRAISON</p>
+            <h2>Livraison à domicile</h2>
+            <p>Renseigne tes coordonnées lors de la validation. Un ticket de livraison unique sera créé automatiquement.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand">
+        <div class="brand-mark">B</div>
+        <div><strong>FAST<span>&GO</span></strong><small>Food • Delivery</small></div>
+      </div>
+      <p>© 2026 FAST&GO — Menu & livraison</p>
+    </footer>
+  </div>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-head">
+      <div>
+        <p class="eyebrow">COMMANDE</p>
+        <h2>Mon panier</h2>
+      </div>
+      <button class="close-btn" id="closeCartBtn">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-empty" id="cartEmpty">
+      <div>🛒</div>
+      <h3>Ton panier est vide</h3>
+      <p>Ajoute un produit pour commencer.</p>
+    </div>
+
+    <div class="cart-summary">
+      <div><span>Sous-total</span><b id="subtotal">0 FCFA</b></div>
+      <div><span>Livraison</span><b id="deliveryFee">1 000 FCFA</b></div>
+      <div class="total-row"><span>Total</span><strong id="cartTotal">1 000 FCFA</strong></div>
+      <button class="primary-btn full" id="checkoutBtn">Valider la commande →</button>
+    </div>
+  </aside>
+
+  <!-- Checkout modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">ÉTAPE FINALE</p>
+          <h2>Informations de livraison</h2>
+        </div>
+        <button class="close-btn" id="closeCheckout">×</button>
+      </div>
+
+      <form id="checkoutForm">
+        <div class="form-grid">
+          <label>Nom complet *
+            <input name="name" required placeholder="Ex. Amadou Ndiaye">
+          </label>
+          <label>Téléphone *
+            <input name="phone" required type="tel" placeholder="+221 77 000 00 00">
+          </label>
+          <label>Quartier / Zone *
+            <input name="district" required placeholder="Ex. rue, quartier, zone...">
+          </label>
+          <label>Adresse de livraison *
+            <input name="address" required placeholder="Rue, maison, repère...">
+          </label>
+          <label class="full-field">Mode de livraison
+            <select name="method">
+              <option value="Livraison standard">Livraison standard</option>
+              <option value="Livraison express">Livraison express</option>
+              <option value="Retrait sur place">Retrait sur place</option>
+            </select>
+          </label>
+          <label class="full-field">Instructions / commentaire
+            <textarea name="notes" rows="3" placeholder="Ex. Appeler à l'arrivée..."></textarea>
+          </label>
+        </div>
+
+        <div class="checkout-mini">
+          <span>Total à payer</span>
+          <strong id="checkoutTotal">0 FCFA</strong>
+        </div>
+
+        <button class="primary-btn full" type="submit">✓ Confirmer et générer le ticket</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Ticket modal -->
+  <div class="modal-overlay" id="ticketModal">
+    <div class="ticket">
+      <div class="ticket-top">
+        <div class="ticket-logo">B</div>
+        <div>
+          <strong>FAST<span>&GO</span></strong>
+          <small>Ticket de livraison</small>
+        </div>
+        <button class="close-btn" id="closeTicket">×</button>
+      </div>
+
+      <div class="ticket-success">✓ COMMANDE VALIDÉE</div>
+
+      <div class="ticket-number">
+        <small>N° TICKET</small>
+        <strong id="ticketNumber">BE-0000</strong>
+      </div>
+
+      <div class="ticket-info">
+        <div><span>Client</span><b id="ticketClient">—</b></div>
+        <div><span>Téléphone</span><b id="ticketPhone">—</b></div>
+        <div><span>Zone</span><b id="ticketDistrict">—</b></div>
+        <div><span>Adresse</span><b id="ticketAddress">—</b></div>
+        <div><span>Livraison</span><b id="ticketMethod">—</b></div>
+      </div>
+
+      <div class="ticket-items" id="ticketItems"></div>
+
+      <div class="ticket-total">
+        <span>Total</span><strong id="ticketTotal">0 FCFA</strong>
+      </div>
+
+      <div class="ticket-actions">
+        <button class="secondary-btn" id="printTicket">🖨 Imprimer</button>
+        <button class="primary-btn" id="newOrder">Nouvelle commande</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
