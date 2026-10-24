@@ -11,7 +11,7 @@ const products = [
   {id:10,name:"Tacos Viande",cat:"Tacos",price:3500,emoji:"🌯",image:"tacos.jpeg",desc:"Viande hachée, frites, fromage et sauce"},
   {id:11,name:"Chicken Box",cat:"Poulet",price:4500,emoji:"🍗",image:"poulet-pane.jpeg",desc:"Poulet croustillant, frites et sauce"},
   {id:12,name:"Poulet Entier",cat:"Poulet",price:7500,emoji:"🍗",image:"poulet-pane.jpeg",desc:"Poulet rôti entier, accompagnement au choix"},
-  {id:13,name:"Chawarma Royale",cat:"Chawarma",price:3000,emoji:"🥙",image:"chawarma.jpeg",desc:"Chawarma, fromage, crudités et sauce maison"},
+  {id:13,name:"Chawarma Royale",cat:"Chawarma",price:3000,emoji:"",image:"chawarma.jpeg",desc:"Chawarma, fromage, crudités et sauce maison"},
   {id:14,name:"Chawarma Simple",cat:"Chawarma",price:2500,emoji:"🥙",image:"chawarma.jpeg",desc:"Poulet chawarma, crudités et sauce"},
   {id:15,name:"Frites Maison",cat:"Accompagnements",price:1500,emoji:"🍟",image:"fataya.jpeg",desc:"Frites croustillantes préparées sur place"},
   {id:16,name:"Nuggets",cat:"Accompagnements",price:2000,emoji:"🍗",image:"poulet-pane.jpeg",desc:"6 nuggets croustillants avec sauce"},
@@ -27,6 +27,14 @@ const DELIVERY_FEE = 1000;
 
 const $ = s => document.querySelector(s);
 const money = n => new Intl.NumberFormat("fr-FR").format(n) + " FCFA";
+
+// Résout les images depuis la racine du site, y compris sous GitHub Pages.
+function imageUrl(filename){ return new URL("./" + encodeURIComponent(filename), document.baseURI).href; }
+function handleImageError(img, fallback){
+  if(img.dataset.fallbackTried === "1"){ img.style.visibility = "hidden"; return; }
+  img.dataset.fallbackTried = "1";
+  img.src = imageUrl(fallback || "burger.jpeg");
+}
 
 function saveCart(){localStorage.setItem("fastgo_cart",JSON.stringify(cart));}
 function cartCount(){return cart.reduce((s,i)=>s+i.qty,0)}
@@ -46,7 +54,7 @@ function renderProducts(){
     <article class="product">
       <div class="product-img">
         ${p.tag?`<span class="product-tag">${p.tag}</span>`:""}
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='burger.jpeg';" />
+        <img src="${imageUrl(p.image)}" alt="${p.name}" loading="lazy" decoding="async" onerror="handleImageError(this, 'burger.jpeg')" />
       </div>
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
@@ -108,7 +116,7 @@ function renderCart(){
   $("#cartEmpty").style.display=cart.length?"none":"block";
   $("#cartItems").innerHTML=cart.map(i=>`
     <div class="cart-line">
-      <div class="cart-img"><img src="${i.image || "burger.jpeg"}" alt="${i.name}" loading="lazy"></div>
+      <div class="cart-img"><img src="${imageUrl(i.image || "burger.jpeg")}" alt="${i.name}" loading="lazy" decoding="async" onerror="handleImageError(this, 'burger.jpeg')"></div>
       <div>
         <h4>${i.name}</h4>
         <p>${money(i.price)} / unité</p>
