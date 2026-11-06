@@ -1,5 +1,5 @@
 const products = [
-  {id:1,name:"Zinger Burger",cat:"Burgers",price:3500,emoji:"🍔",image:"burger.jpeg",desc:"Pain brioché, poulet croustillant, salade et sauce maison",tag:"POPULAIRE"},
+  {id:1,name:"Zinger Burger",cat:"Burgers",price:3500,image:"burger.jpeg",image:"burger.jpeg",desc:"Pain brioché, poulet croustillant, salade et sauce maison",tag:"POPULAIRE"},
   {id:2,name:"Beef Burger",cat:"Burgers",price:4000,emoji:"🍔",image:"burger2.jpeg",desc:"Steak haché, cheddar, oignons et sauce spéciale"},
   {id:3,name:"Chicken Burger",cat:"Burgers",price:3200,emoji:"🍔",image:"burger.jpeg",desc:"Poulet grillé, fromage, laitue et sauce maison"},
   {id:4,name:"Cheese Burger",cat:"Burgers",price:3000,emoji:"🍔",image:"burger2.jpeg",desc:"Steak, double fromage et sauce burger"},
