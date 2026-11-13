@@ -1,24 +1,24 @@
 const products = [
-  {id:1,name:"Zinger Burger",cat:"Burgers",price:3500,image:"",:"burger.jpeg",desc:"Pain brioché, poulet croustillant, salade et sauce maison",tag:"POPULAIRE"},
-  {id:2,name:"Beef Burger",cat:"Burgers",price:4000,image:"burger2.jpeg",:"",desc:"Steak haché, cheddar, oignons et sauce spéciale"},
-  {id:3,name:"Chicken Burger",cat:"Burgers",price:3200,emoji:"🍔",,desc:"Poulet grillé, fromage, laitue et sauce maison"},
-  {id:4,name:"Cheese Burger",cat:"Burgers",price:3000,emoji:"🍔",,desc:"Steak, double fromage et sauce burger"},
-  {id:5,name:"Fajita Pizza",cat:"Pizzas",price:5000,emoji:"🍕",,desc:"Poulet fajita, poivrons, olives et fromage",tag:"BEST"},
-  {id:6,name:"Pizza Royale",cat:"Pizzas",price:6000,emoji:"🍕",,desc:"Viande, poulet, champignons, olives et mozzarella"},
-  {id:7,name:"Pizza 4 Fromages",cat:"Pizzas",price:5500,emoji:"🍕",,desc:"Mélange de quatre fromages fondants"},
-  {id:8,name:"Pizza Pepperoni",cat:"Pizzas",price:5200,emoji:"🍕",,desc:"Pepperoni, sauce tomate et mozzarella"},
-  {id:9,name:"Tacos Poulet",cat:"Tacos",price:3000,emoji:"🌯",,desc:"Poulet, frites, fromage et sauce fromagère",tag:"HOT"},
-  {id:10,name:"Tacos Viande",cat:"Tacos",price:3500,emoji:"🌯",,desc:"Viande hachée, frites, fromage et sauce"},
-  {id:11,name:"Chicken Box",cat:"Poulet",price:4500,emoji:"🍗",,desc:"Poulet croustillant, frites et sauce"},
-  {id:12,name:"Poulet Entier",cat:"Poulet",price:7500,emoji:"🍗",,desc:"Poulet rôti entier, accompagnement au choix"},
-  {id:13,name:"Chawarma Royale",cat:"Chawarma",price:3000,emoji:"",,desc:"Chawarma, fromage, crudités et sauce maison"},
-  {id:14,name:"Chawarma Simple",cat:"Chawarma",price:2500,emoji:"🥙",,desc:"Poulet chawarma, crudités et sauce"},
-  {id:15,name:"Frites Maison",cat:"Accompagnements",price:1500,emoji:"🍟",,desc:"Frites croustillantes préparées sur place"},
-  {id:16,name:"Nuggets",cat:"Accompagnements",price:2000,emoji:"🍗",,desc:"6 nuggets croustillants avec sauce"},
-  {id:17,name:"Coca-Cola",cat:"Boissons",price:1000,emoji:"🥤",,desc:"Canette fraîche 33cl"},
-  {id:18,name:"Sprite",cat:"Boissons",price:1000,emoji:"🥤",,desc:"Canette fraîche 33cl"},
-  {id:19,name:"Eau minérale",cat:"Boissons",price:500,emoji:"💧",,desc:"Bouteille 50cl"},
-  {id:20,name:"Jus Bissap",cat:"Boissons",price:1200,emoji:"🧃",,desc:"Jus de bissap frais maison"}
+  {id:1,name:"Zinger Burger",cat:"Burgers",price:3500,emoji:"🍔",image:"burger.jpeg",desc:"Pain brioché, poulet croustillant, salade et sauce maison",tag:"POPULAIRE"},
+  {id:2,name:"Beef Burger",cat:"Burgers",price:4000,emoji:"🍔",image:"burger2.jpeg",desc:"Steak haché, cheddar, oignons et sauce spéciale"},
+  {id:3,name:"Chicken Burger",cat:"Burgers",price:3200,emoji:"🍔",image:"burger.jpeg",desc:"Poulet grillé, fromage, laitue et sauce maison"},
+  {id:4,name:"Cheese Burger",cat:"Burgers",price:3000,emoji:"🍔",image:"burger2.jpeg",desc:"Steak, double fromage et sauce burger"},
+  {id:5,name:"Fajita Pizza",cat:"Pizzas",price:5000,emoji:"🍕",image:"pizza.jpeg",desc:"Poulet fajita, poivrons, olives et fromage",tag:"BEST"},
+  {id:6,name:"Pizza Royale",cat:"Pizzas",price:6000,emoji:"🍕",image:"pizza.jpeg",desc:"Viande, poulet, champignons, olives et mozzarella"},
+  {id:7,name:"Pizza 4 Fromages",cat:"Pizzas",price:5500,emoji:"🍕",image:"pizza.jpeg",desc:"Mélange de quatre fromages fondants"},
+  {id:8,name:"Pizza Pepperoni",cat:"Pizzas",price:5200,emoji:"🍕",image:"pizza.jpeg",desc:"Pepperoni, sauce tomate et mozzarella"},
+  {id:9,name:"Tacos Poulet",cat:"Tacos",price:3000,emoji:"🌯",image:"tacos.jpeg",desc:"Poulet, frites, fromage et sauce fromagère",tag:"HOT"},
+  {id:10,name:"Tacos Viande",cat:"Tacos",price:3500,emoji:"🌯",image:"tacos.jpeg",desc:"Viande hachée, frites, fromage et sauce"},
+  {id:11,name:"Chicken Box",cat:"Poulet",price:4500,emoji:"🍗",image:"poulet-pane.jpeg",desc:"Poulet croustillant, frites et sauce"},
+  {id:12,name:"Poulet Entier",cat:"Poulet",price:7500,emoji:"🍗",image:"poulet-pane.jpeg",desc:"Poulet rôti entier, accompagnement au choix"},
+  {id:13,name:"Chawarma Royale",cat:"Chawarma",price:3000,emoji:"🥙",image:"chawarma.jpeg",desc:"Chawarma, fromage, crudités et sauce maison"},
+  {id:14,name:"Chawarma Simple",cat:"Chawarma",price:2500,emoji:"🥙",image:"chawarma.jpeg",desc:"Poulet chawarma, crudités et sauce"},
+  {id:15,name:"Frites Maison",cat:"Accompagnements",price:1500,emoji:"🍟",image:"fataya.jpeg",desc:"Frites croustillantes préparées sur place"},
+  {id:16,name:"Nuggets",cat:"Accompagnements",price:2000,emoji:"🍗",image:"poulet-pane.jpeg",desc:"6 nuggets croustillants avec sauce"},
+  {id:17,name:"Coca-Cola",cat:"Boissons",price:1000,emoji:"🥤",image:"jusbissap.webp",desc:"Canette fraîche 33cl"},
+  {id:18,name:"Sprite",cat:"Boissons",price:1000,emoji:"🥤",image:"jusbissap.webp",desc:"Canette fraîche 33cl"},
+  {id:19,name:"Eau minérale",cat:"Boissons",price:500,emoji:"💧",image:"jusbissap.webp",desc:"Bouteille 50cl"},
+  {id:20,name:"Jus Bissap",cat:"Boissons",price:1200,emoji:"🧃",image:"jusbissap.webp",desc:"Jus de bissap frais maison"}
 ];
 
 let cart = JSON.parse(localStorage.getItem("fastgo_cart") || "[]");
@@ -27,14 +27,6 @@ const DELIVERY_FEE = 1000;
 
 const $ = s => document.querySelector(s);
 const money = n => new Intl.NumberFormat("fr-FR").format(n) + " FCFA";
-
-// Résout les images depuis la racine du site, y compris sous GitHub Pages.
-function imageUrl(filename){ return new URL("./" + encodeURIComponent(filename), document.baseURI).href; }
-function handleImageError(img, fallback){
-  if(img.dataset.fallbackTried === "1"){ img.style.visibility = "hidden"; return; }
-  img.dataset.fallbackTried = "1";
-  img.src = imageUrl(fallback || "burger.jpeg");
-}
 
 function saveCart(){localStorage.setItem("fastgo_cart",JSON.stringify(cart));}
 function cartCount(){return cart.reduce((s,i)=>s+i.qty,0)}
@@ -54,7 +46,7 @@ function renderProducts(){
     <article class="product">
       <div class="product-img">
         ${p.tag?`<span class="product-tag">${p.tag}</span>`:""}
-        <img src="${imageUrl(p.image)}" alt="${p.name}" loading="lazy" decoding="async" onerror="handleImageError(this, 'burger.jpeg')" />
+        <span class="product-emoji" role="img" aria-label="${p.name}">${p.emoji || "🛍️"}</span>
       </div>
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
@@ -116,7 +108,7 @@ function renderCart(){
   $("#cartEmpty").style.display=cart.length?"none":"block";
   $("#cartItems").innerHTML=cart.map(i=>`
     <div class="cart-line">
-      <div class="cart-img"><img src="${imageUrl(i.image || "burger.jpeg")}" alt="${i.name}" loading="lazy" decoding="async" onerror="handleImageError(this, 'burger.jpeg')"></div>
+      <div class="cart-img"><span class="cart-emoji" role="img" aria-label="${i.name}">${i.emoji || "🛍️"}</span></div>
       <div>
         <h4>${i.name}</h4>
         <p>${money(i.price)} / unité</p>
